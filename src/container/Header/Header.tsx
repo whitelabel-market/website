@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Button } from "../../components";
 import { videos } from "../../constants";
-import "./Header.css";
 
 const Header = () => {
   return (

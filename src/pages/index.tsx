@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import {
-    About,
-    Clients,
-    Experience,
-    Expertise,
-    Features,
-    Footer,
-    Header,
+     About,
+     Features,
+     Clients,
+     Expertise,
+     Experience,
+     Footer,
+     Header,
 } from "../container";
 
 import { DarkModeToggler } from "../components";
@@ -30,9 +30,9 @@ const Home: NextPage = () => {
           <Experience />
       </main>
 
-      <DarkModeToggler />
+        <DarkModeToggler />
 
-      <Footer />
+        <Footer />
     </div>
   )
 }
