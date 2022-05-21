@@ -1,6 +1,7 @@
 import React from "react";
-import { images } from "../../constants";
-import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+import { images, icons } from "../../constants";
+
+const Logo = icons.LogoIcon
 
 const Footer = () => {
   const navigations = [

@@ -1,9 +1,7 @@
 import React from "react";
 import { images } from "../../constants";
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import { ReactComponent as DummyLogo01 } from "../../assets/icons/dummyLogo01.svg";
-import { ReactComponent as DummyLogo02 } from "../../assets/icons/dummyLogo02.svg";
-import { ReactComponent as DummyLogo03 } from "../../assets/icons/dummyLogo03.svg";
+import { DummyLogoIcon1, DummyLogoIcon2, DummyLogoIcon3 } from "../../components/Icons/DummyLogoIcons";
 import { StatisticNumber } from "../../components";
 
 const Clients = () => {
@@ -40,9 +38,9 @@ const Clients = () => {
           ))}
         </div>
         <div className="mb-5 flex space-x-6 lg:mb-14 lg:space-x-10">
-          <DummyLogo01 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px]" />
-          <DummyLogo02 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px] " />
-          <DummyLogo03 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px] " />
+          <DummyLogoIcon1 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px]" />
+          <DummyLogoIcon2 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px] " />
+          <DummyLogoIcon3 className="h-auto w-1/3 fill-current text-dark-secondary dark:text-[#E5E5E5] lg:w-[153px] " />
         </div>
         <a
           href="#"

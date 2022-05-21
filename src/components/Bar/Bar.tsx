@@ -1,7 +1,6 @@
 import React from "react";
-import "./Bar.css";
 
-const Bar = ({ title, percentage, className }) => {
+const Bar = ({ title, percentage, className }: {title:string, percentage:number, className:string}) => {
   return (
     <div className={className}>
       <div className="mb-1 flex items-center justify-between">

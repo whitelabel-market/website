@@ -27,7 +27,8 @@ const Experience = () => {
     { name: "peaq", imgUrl: images.peaq, url: "https://www.nakamo.to/" },
   ];
   return (
-    <div className="mt-20 h-full bg-[url('./assets/images/experience-bg.jpg')] bg-cover bg-center bg-no-repeat py-14 px-7 lg:mx-28 lg:px-28">
+    <div className="mt-20 h-full bg-cover bg-center bg-no-repeat py-14 px-7 lg:mx-28 lg:px-28">
+      {/*./assets/images/experience-bg.jpg*/}
       <div className="mb-12">
         <h2 className="mb-6 text-4xl text-white lg:text-5xl">Experience</h2>
         <p className="text-sm font-light text-[#E8E8E8] lg:max-w-sm lg:text-base">
