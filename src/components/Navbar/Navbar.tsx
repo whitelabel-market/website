@@ -32,8 +32,9 @@ const Navbar = () => {
             <nav
                 className="fixed h-32 flex items-center justify-center top-0 left-0 z-50 bg-transparent text-white w-full capitalize font-semibold text-base mix-blend-difference">
                 <div className="flex items-center justify-between container px-8 lg:px-16 mx-auto relative">
-                    <div className="flex items-center justify-start">
-                        <icons.LogoIcon/>
+                    <div className="flex items-center justify-start space-x-1">
+                        <icons.LogoIcon className={"block w-8 h-8"}/>
+                        <span className={"block font-bold text-xl"}>Whitelabel Solutions</span>
                     </div>
                     <ul className="hidden lg:flex items-center justify-end space-x-8">
                         {navigations.map((nav, index) => (

@@ -33,8 +33,8 @@ const Experience = () => {
                 <div className="relative w-full mx-auto p-8 lg:p-16 text-white">
                     <Image placeholder={"blur"} src={images.experienceBg} layout="fill" alt={"Experience Background"}
                            className={"absolute top-0 left-0 w-full h-full object-cover rounded-xl"}/>
-                    <div className="relative grid grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-3">
-                        <div className={"col-span-2 lg:col-span-3 lg:w-3/5"}>
+                    <div className="relative grid gap-4 lg:gap-8 lg:grid-cols-3">
+                        <div className={"lg:col-span-3 lg:w-3/5"}>
                             <h2 className="title mb-8">Experience</h2>
 
                             <p>
@@ -54,7 +54,7 @@ const Experience = () => {
                                 rel="noreferrer"
                                 key={technology.name + index}
                                 href={technology.url}
-                                className="relative flex items-center justify-center rounded-xl bg-stone-900 p-4 lg:px-16 transition-all duration-300 hover:bg-stone-800"
+                                className="relative flex items-center justify-center rounded-xl bg-stone-900 py-4 px-16 transition-all duration-300 hover:bg-stone-800"
                             >
                                 <Image src={technology.imgUrl} alt={technology.name}/>
                             </a>
