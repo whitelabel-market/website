@@ -1,18 +1,26 @@
 import React from "react";
+import Image, {StaticImageData} from 'next/image'
 
-const TeamCard = ({ name, role, imgUrl, className }) => {
-  return (
-    <div className={`${className} flex flex-col items-center`}>
-      <img
-        className="mb-4 w-96 rounded-lg lg:rounded-none"
-        src={imgUrl}
-        alt=""
-      />
-      <p className="text-sm dark:text-white">Hi! My name</p>
-      <h3 className="text-xl font-bold dark:text-white">{name}</h3>
-      <p className="text-[10px] dark:text-white">{role}</p>
-    </div>
-  );
+const TeamCard = ({
+                      name,
+                      role,
+                      imgUrl,
+                      className
+                  }: { name: string, role: string, imgUrl: StaticImageData, className: string }) => {
+    return (
+        <div className={`${className} flex flex-col text-center space-y-4`}>
+            <Image
+                placeholder={"blur"}
+                className="rounded-full border"
+                src={imgUrl}
+                alt={name}
+            />
+            <div className={"space-y-2"}>
+                <h3 className="text-xl font-bold ">{name}</h3>
+                <p className="text-sm ">{role}</p>
+            </div>
+        </div>
+    );
 };
 
 export default TeamCard;

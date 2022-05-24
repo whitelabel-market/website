@@ -20,7 +20,7 @@ import peaq from "../assets/images/peaq.png";
 import polkadot from "../assets/images/polkadot.png";
 import stelalabs from "../assets/images/stelalabs.png";
 import warp from "../assets/images/warp.png";
-
+import experienceBg from "../assets/images/experience-bg.jpg"
 export default {
   logo,
   logoDark,
@@ -40,4 +40,5 @@ export default {
   polkadot,
   stelalabs,
   warp,
+  experienceBg
 };
