@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
-import CountUp from "react-countup";
+import React, { useRef, useState, useEffect } from 'react';
+import CountUp from 'react-countup';
 
-const StatisticNumber = ({ number, className }) => {
-  const ref = useRef();
-  const useIntersection = (element, rootMargin) => {
+const StatisticNumber = ({ number, className }: any) => {
+  const ref = useRef<any>();
+  const useIntersection = (element: any, rootMargin: any) => {
     const [isVisible, setState] = useState(false);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const StatisticNumber = ({ number, className }) => {
         ([entry]) => {
           setState(entry.isIntersecting);
         },
-        { rootMargin }
+        { rootMargin },
       );
 
       element.current && observer.observe(element.current);
@@ -22,7 +22,7 @@ const StatisticNumber = ({ number, className }) => {
     return isVisible;
   };
 
-  const inViewport = useIntersection(ref, "0px");
+  const inViewport = useIntersection(ref, '0px');
 
   //   if (inViewport) {
   //     console.log("in viewport:", ref.current);

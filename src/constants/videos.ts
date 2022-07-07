@@ -1,4 +1,4 @@
-const VIDEO_BASE_URL = `https://res.cloudinary.com/daowii7cc/video/upload/ac_none,c_scale,h_1080,q_auto:eco/v1653073736/whitelabel-solutions/`
+const VIDEO_BASE_URL = `https://res.cloudinary.com/daowii7cc/video/upload/ac_none,c_scale,h_1080,q_auto:eco/v1653073736/whitelabel-solutions/`;
 
 const headerVideo = `${VIDEO_BASE_URL}/hero-video_rmfqvt.mp4`;
 const featureVideo1 = `${VIDEO_BASE_URL}/feature-video-1_wxryxn.mp4`;

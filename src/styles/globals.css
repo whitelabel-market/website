@@ -1,74 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    section {
-        @apply py-20
-    }
-    section:first-of-type {
-        @apply pb-20 pt-40
-    }
-    section:last-of-type {
-        @apply pt-20 pb-40
-    }
+  @font-face {
+    font-family: Qanelas;
+    font-weight: 300;
+    src: url(../assets/fonts/QanelasLight.woff) format('woff');
+  }
 
-    p {
-        @apply dark:text-neutral-400
-    }
+  @font-face {
+    font-family: Qanelas;
+    font-weight: 400;
+    src: url(../assets/fonts/QanelasRegular.woff) format('woff');
+  }
 
-    .title {
-        @apply text-4xl lg:text-5xl font-bold dark:text-neutral-100
-    }
+  @font-face {
+    font-family: Qanelas;
+    font-weight: 600;
+    src: url(../assets/fonts/QanelasSemiBold.woff) format('woff');
+  }
 
-    .title-2 {
-        @apply text-2xl lg:text-3xl dark:text-neutral-100
-    }
+  @font-face {
+    font-family: Qanelas;
+    font-weight: 700;
+    src: url(../assets/fonts/QanelasBold.woff) format('woff');
+  }
 
-    .subtitle {
-        @apply text-lg text-black/95 dark:text-neutral-100
-    }
+  @font-face {
+    font-family: Space Grotesk;
+    font-weight: 400;
+    src: url(../assets/fonts/SpaceGrotesk-Regular.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: Space Grotesk;
+    font-weight: 700;
+    src: url(../assets/fonts/SpaceGrotesk-Bold.woff2) format('woff2');
+  }
+
+  body {
+  }
+
+  p {
+    @apply text-black/50 dark:text-white/50 tracking-wide;
+  }
+
+  section {
+    @apply py-20;
+  }
+  section:first-of-type {
+    @apply pb-20 pt-40;
+  }
+  section:last-of-type {
+    @apply pt-20 pb-40;
+  }
+
+  p {
+    @apply dark:text-neutral-400;
+  }
+
+  .title {
+    @apply text-4xl lg:text-5xl font-bold dark:text-neutral-100;
+  }
+
+  .title-2 {
+    @apply text-2xl lg:text-3xl dark:text-neutral-100;
+  }
+
+  .subtitle {
+    @apply text-brand font-bold uppercase text-xs;
+  }
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .embed-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 .embed-container iframe,
 .embed-container object,
 .embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 progress {
-    border-radius: 7px;
-    width: 100%;
-    height: 17px;
+  border-radius: 7px;
+  width: 100%;
+  height: 17px;
 }
 progress::-webkit-progress-bar {
-    background-color: #e8e8e8;
-    border-radius: 65px;
+  background-color: #e8e8e8;
+  border-radius: 65px;
 }
 .dark progress::-webkit-progress-bar {
-    background-color: #676767;
+  background-color: #676767;
 }
 progress::-webkit-progress-value {
-    background-color: #2b2b2b;
-    border-radius: 65px;
+  background-color: #2b2b2b;
+  border-radius: 65px;
 }
 .dark progress::-webkit-progress-value {
-    background-color: #eaeaea;
+  background-color: #eaeaea;
 }

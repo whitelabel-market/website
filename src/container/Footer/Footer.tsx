@@ -1,50 +1,90 @@
-import React from "react";
-import { images, icons } from "../../constants";
+import React from 'react';
+import { images, icons } from '../../constants';
+import Link from 'next/link';
+import { ExternalLinkIcon, LinkIcon } from '@heroicons/react/outline';
 
-const Logo = icons.LogoIcon
+const Logo = icons.LogoIcon;
 
 const Footer = () => {
-  const navigations = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "#about" },
-    { name: "Service", link: "#service" },
-    { name: "Contact us", link: "#contact" },
-  ];
-  const socials = [
-    { name: "Dribble", link: "#" },
-    { name: "Behance", link: "#" },
-    { name: "Instagram", link: "#" },
-    { name: "Twitter", link: "#" },
-  ];
+  const Home = {
+    Home: '/',
+    About: '/#about',
+    Service: '/#service',
+    'Contact us': '/#contact',
+  };
+
+  const CaseStudies = {
+    Home: '/',
+    About: '/#about',
+    Service: '/#service',
+    'Contact us': '/#contact',
+  };
+
+  const Social = {
+    Dribble: '/',
+    Behance: '/',
+    Instagram: '/',
+    Twitter: '/',
+  };
+
+  const Legal: Record<string, string> = {
+    Privacy: '/privacy',
+    'Terms of usage': '/terms',
+  };
+  const routes: Record<string, Record<string, string>> = {
+    Home,
+    'Case Studies': CaseStudies,
+    Social,
+  };
+
   return (
-    <footer className="px-7 py-7 lg:mt-14 lg:px-28 lg:py-10">
-      <div className="flex flex-col-reverse items-center lg:flex-row lg:justify-between">
-        <Logo className="h-auto w-[135px] fill-current text-dark-secondary dark:text-[#E8E8E8]" />
-        <ul className="mb-4 flex space-x-6 lg:space-x-12">
-          {navigations.map((nav, index) => (
-            <li
-              key={nav.name + index}
-              className="text-sm font-medium text-dark-terniary dark:text-[#E8E8E8] lg:text-base"
-            >
-              <a href={nav.link}>{nav.name}</a>
-            </li>
+    <footer className="bg-neutral-900 dark:bg-black text-white border-b-4 border-brand">
+      <div className="grid lg:grid-cols-12 lg:p-4">
+        <div className="flex flex-col p-4 lg:p-12 lg:col-span-3">
+          <div className="flex flex-col space-y-12 text-white/90">
+            <Logo className="h-auto w-20 fill-current" />
+            <h5 className="font-bold text-3xl">Decentum</h5>
+          </div>
+
+          <div className="mt-auto">
+            <p className="text-white/50 font-light text-xs">
+              {' '}
+              We help grow the future industry - Be part of the digital
+              revolution and get the most of the value of the internet.
+            </p>
+          </div>
+        </div>
+        <div className={'lg:col-span-9 grid lg:grid-cols-3'}>
+          {Object.keys(routes).map((title: string, i) => (
+            <div className="flex flex-col p-4 lg:p-12 justify-start" key={i}>
+              <div className="">
+                <h6 className={'font-serif text-sm text-brand'}>{title}</h6>
+              </div>
+
+              <ul className="pt-32 pb-24 lg:pb-16 flex flex-col space-y-1 mt-auto">
+                {Object.keys(routes[title]).map((name, j) => (
+                  <li key={i + j}>
+                    <Link href={routes[title][name]} passHref>
+                      <a className="text-xs uppercase font-light inline-flex items-center space-x-2">
+                        <span className={'block'}>{name}</span>
+                        <ExternalLinkIcon className="w-3 h-3" />
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
-      </div>
-      <div className="mt-4 lg:mt-8 lg:flex lg:items-center lg:justify-between">
-        <ul className="hidden lg:flex lg:space-x-8">
-          {socials.map((social, index) => (
-            <li
-              key={social.name + index}
-              className="text-base font-medium text-dark-terniary dark:text-[#E5E5E5]"
-            >
-              <a href={social.link}>{social.name}</a>
-            </li>
-          ))}
-        </ul>
-        <p className="text-center text-sm font-light text-dark-terniary dark:text-[#E5E5E5]">
-          &copy; Copyright NXT YOU GmbH
-        </p>
+          <div className="p-4 lg:p-12">
+            <p className="text-white/50 font-light text-xs">
+              &copy; Copyright Decentum
+            </p>
+          </div>
+          <div className="p-4 lg:p-12 text-white/50 font-light text-xs">
+            <Link href={Legal.Privacy}>Privacy Policy</Link> &{' '}
+            <Link href={Legal['Terms of usage']}>Terms of usage</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
