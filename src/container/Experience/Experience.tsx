@@ -5,43 +5,41 @@ import Image from 'next/image';
 const Experience = () => {
   const technologies = [
     {
-      name: 'polkadot',
+      name: `polkadot`,
       imgUrl: images.polkadot,
-      url: 'https://polkadot.network/',
+      url: `https://polkadot.network/`,
     },
-    { name: 'warp', imgUrl: images.warp, url: 'https://www.warp.finance/' },
+    { name: `warp`, imgUrl: images.warp, url: `https://www.warp.finance/` },
     {
-      name: 'fractal',
+      name: `fractal`,
       imgUrl: images.fractal,
-      url: 'https://protocol.fractal.id/',
+      url: `https://protocol.fractal.id/`,
     },
     {
-      name: 'nakamoto',
+      name: `nakamoto`,
       imgUrl: images.nakamoto,
-      url: 'https://www.stelalabs.com/',
+      url: `https://www.stelalabs.com/`,
     },
     {
-      name: 'stelalabs',
+      name: `stelalabs`,
       imgUrl: images.stelalabs,
-      url: 'https://www.peaq.network/',
+      url: `https://www.peaq.network/`,
     },
-    { name: 'peaq', imgUrl: images.peaq, url: 'https://www.nakamo.to/' },
+    { name: `peaq`, imgUrl: images.peaq, url: `https://www.nakamo.to/` },
   ];
   return (
     <section>
-      <div className={'container mx-auto px-8 lg:px-16'}>
+      <div className={`container mx-auto px-8 lg:px-16`}>
         <div className="relative w-full mx-auto p-8 lg:p-16 text-white">
           <Image
-            placeholder={'blur'}
+            placeholder={`blur`}
             src={images.experienceBg}
             layout="fill"
-            alt={'Experience Background'}
-            className={
-              'absolute top-0 left-0 w-full h-full object-cover rounded-xl'
-            }
+            alt={`Experience Background`}
+            className={`absolute top-0 left-0 w-full h-full object-cover rounded-xl`}
           />
           <div className="relative grid gap-4 lg:gap-8 lg:grid-cols-3">
-            <div className={'lg:col-span-3 lg:w-3/5'}>
+            <div className={`lg:col-span-3 lg:w-3/5`}>
               <h2 className="title mb-8">Experience</h2>
 
               <p>

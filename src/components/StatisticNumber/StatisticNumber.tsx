@@ -17,12 +17,12 @@ const StatisticNumber = ({ number, className }: any) => {
       element.current && observer.observe(element.current);
 
       return () => observer.unobserve(element.current);
-    }, []);
+    });
 
     return isVisible;
   };
 
-  const inViewport = useIntersection(ref, '0px');
+  const inViewport = useIntersection(ref, `0px`);
 
   //   if (inViewport) {
   //     console.log("in viewport:", ref.current);

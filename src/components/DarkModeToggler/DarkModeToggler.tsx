@@ -1,34 +1,37 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
+import { Switch } from '@headlessui/react';
+import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
 
-const DarkModeToggler = () => {
+export default function DarkModeToggler() {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const circleButton = useRef(null);
-  const title = useRef(null);
-  const [offset, setOffset] = useState(0);
-
   useEffect(() => {
-    const onScroll = () => setOffset(window.pageYOffset);
-
-    window.removeEventListener('scroll', onScroll);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    setMounted(true);
   }, []);
 
-  return (
-    <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="relative inline-flex items-center justify-center rounded-full p-1"
-    >
-      {theme === 'dark' ? (
-        <SunIcon className={'w-6 h-6'} />
-      ) : (
-        <MoonIcon className={'w-6 h-6'} />
-      )}
-    </button>
-  );
-};
+  if (!mounted) {
+    return null;
+  }
 
-export default DarkModeToggler;
+  return (
+    <Switch
+      checked={theme === `light`}
+      onChange={() => setTheme(theme === `light` ? `dark` : `light`)}
+      className={`relative block h-5 w-10 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out bg-neutral-200`}
+    >
+      <span className="sr-only">Toggle Theme</span>
+      <span
+        aria-hidden="true"
+        className={
+          `shadow-2xl absolute text-base inline-flex items-center justify-center bg-neutral-900 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-900 top-1/2 left-0 pointer-events-none inline-block h-6 w-6 transform -translate-y-1/2 rounded-full transition duration-200 ease-in-out` +
+          ` ` +
+          (theme === `light` ? `translate-x-4` : `-translate-x-1`)
+        }
+      >
+        {theme === `light` ? <IoMoonOutline /> : <IoSunnyOutline />}
+      </span>
+    </Switch>
+  );
+}
