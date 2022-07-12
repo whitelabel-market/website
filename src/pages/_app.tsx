@@ -1,8 +1,12 @@
-import '../styles/globals.css';
+import React from 'react';
 import { ThemeProvider } from 'next-themes';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { AppProps } from 'next/app';
+import Header from '@/components/Header';
+
+import '../styles/globals.css';
+import Footer from '@/components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +15,13 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider attribute="class">
         <div>
-          <Component {...pageProps} />
+          <Header />
+
+          <main>
+            <Component {...pageProps} />
+          </main>
+
+          <Footer />
         </div>
       </ThemeProvider>
     </>

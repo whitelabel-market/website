@@ -1,31 +1,23 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
-import { About, Features, Clients, Footer, Header } from '../container';
-
-import { Navbar } from '../components';
 import React from 'react';
+import Hero from '@/container/Hero';
+import About from '@/container/About/';
+import Features from '@/container/Features';
+import Clients from '@/container/Clients';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Decentum</title>
-        <meta name="description" content="Whitelabel Solutions" />
+        <title>Decentum | We help grow the future Industry</title>
+        <meta name="description" content="Decentum" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-
-      <main>
-        <Header />
-        <About />
-        <Features />
-        <Clients />
-      </main>
-
-      <Footer />
-    </div>
+      <Hero />
+      <About />
+      <Features />
+      <Clients />
+    </>
   );
-};
-
-export default Home;
+}

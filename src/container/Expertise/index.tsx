@@ -1,7 +1,7 @@
 import React from 'react';
-import { Bar } from '../../components';
+import Bar from '@/components/Bar';
 
-const Expertise = () => {
+export default function Expertise() {
   const skills = [
     { title: `Solidity`, percentage: 90 },
     { title: `Typescript/Javascript`, percentage: 95 },
@@ -33,6 +33,4 @@ const Expertise = () => {
       </div>
     </div>
   );
-};
-
-export default Expertise;
+}

@@ -1,15 +1,15 @@
 import React from 'react';
-import { images } from '../../constants';
+import { images } from '@/constants';
 import {
   IoInformationCircleOutline,
   IoTrendingUpOutline,
 } from 'react-icons/io5';
-import Card from '../../components/Card';
-import SectionTitle from '../../components/SectionTitle';
+import Card from '@/components/Card';
+import SectionTitle from '@/components/SectionTitle';
 import Link from 'next/link';
-import { ButtonPrimary } from '../../components';
+import { ButtonPrimary } from '@/components/Button';
 
-const About = () => {
+const Index = () => {
   const teams = [
     {
       name: `Clemens Kauschke`,
@@ -73,4 +73,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Index;

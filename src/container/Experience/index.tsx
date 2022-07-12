@@ -1,8 +1,8 @@
 import React from 'react';
-import { images } from '../../constants';
+import { images } from '@/constants';
 import Image from 'next/image';
 
-const Experience = () => {
+export default function Experience() {
   const technologies = [
     {
       name: `polkadot`,
@@ -57,7 +57,7 @@ const Experience = () => {
                 rel="noreferrer"
                 key={technology.name + index}
                 href={technology.url}
-                className="relative flex items-center justify-center rounded-xl bg-stone-900 py-4 px-16 transition-all duration-300 hover:bg-stone-800"
+                className="relative flex items-center justify-center rounded-xl bg-neutral-900 py-4 px-16 transition-all duration-300 hover:bg-neutral-800"
               >
                 <Image src={technology.imgUrl} alt={technology.name} />
               </a>
@@ -67,6 +67,4 @@ const Experience = () => {
       </div>
     </section>
   );
-};
-
-export default Experience;
+}

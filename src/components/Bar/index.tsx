@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Bar = ({
+const Index = ({
   title,
   percentage,
   className,
@@ -26,4 +26,4 @@ const Bar = ({
   );
 };
 
-export default Bar;
+export default Index;

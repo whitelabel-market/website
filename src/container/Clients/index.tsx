@@ -3,14 +3,11 @@ import {
   DummyLogoIcon1,
   DummyLogoIcon2,
   DummyLogoIcon3,
-} from '../../components/Icons/DummyLogoIcons';
-import {
-  ButtonOutline,
-  ButtonSecondary,
-  StatisticNumber,
-} from '../../components';
-import SectionTitle from '../../components/SectionTitle';
+} from '@/components/Icons/';
+import { ButtonOutline } from '@/components/Button';
+import SectionTitle from '@/components/SectionTitle';
 import { IoBulbOutline, IoHeart, IoRocketOutline } from 'react-icons/io5';
+import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
 
 function ClientCard({ title, number, icon }: any) {
   return (
@@ -21,7 +18,7 @@ function ClientCard({ title, number, icon }: any) {
       <div className="px-8">
         <h3 className="font-serif text-xl">{title}</h3>
       </div>
-      <div className="ml-auto px-8">
+      <div className="ml-auto px-8 flex items-center justify-end w-28 text-right">
         <StatisticNumber
           number={number}
           className="text-xl lining-nums font-bold"
@@ -31,7 +28,7 @@ function ClientCard({ title, number, icon }: any) {
   );
 }
 
-const Clients = () => {
+export default function Clients() {
   const statistics = [
     { number: 20, title: `Projects Completed`, icon: <IoRocketOutline /> },
     { number: 400, title: `Happy Clients`, icon: <IoHeart /> },
@@ -40,7 +37,7 @@ const Clients = () => {
   return (
     <section id={`clients`}>
       <SectionTitle
-        title="Our Beloved Clients"
+        title="Our Beloved Index"
         description={`We recognise our clients are the experts in their industry. We make sure to make the best use of their knowledge to mutually achieve our goals.`}
       >
         <div className="flex flex-col space-y-4">
@@ -67,6 +64,4 @@ const Clients = () => {
       </SectionTitle>
     </section>
   );
-};
-
-export default Clients;
+}

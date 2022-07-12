@@ -1,10 +1,9 @@
 import React from 'react';
-import { icons, routes } from '../../constants';
+import { routes } from '@/constants';
 import Link from 'next/link';
+import Logo from '@/components/Icons/LogoIcon';
 
-const Logo = icons.LogoIcon;
-
-const Footer = () => {
+export default function Footer() {
   const footerRoutes = {
     Home: routes.Home,
     'Case Studies': routes[`Case Studies`],
@@ -61,6 +60,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

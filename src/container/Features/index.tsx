@@ -1,6 +1,6 @@
-import { videos } from '../../constants';
+import { videos } from '@/constants';
 import React from 'react';
-import { ButtonOutline, ButtonSecondary } from '../../components';
+import { ButtonSecondary } from '@/components/Button';
 
 interface FeatureCardProps {
   index: string;

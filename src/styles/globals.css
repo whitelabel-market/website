@@ -13,7 +13,7 @@
   }
 
   .title, .title-1 {
-    @apply relative font-serif text-5xl md:text-6xl;
+    @apply relative font-serif text-5xl md:text-6xl; 
   }
 
   .title-2 {
@@ -98,7 +98,7 @@
   }
 
   p {
-    @apply text-neutral-900/50 dark:text-neutral-50/50 tracking-wide
+    @apply text-neutral-900/70 dark:text-neutral-50/70 tracking-wide
   }
 
 }
