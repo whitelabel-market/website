@@ -12,7 +12,7 @@ import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
 function ClientCard({ title, number, icon }: any) {
   return (
     <div className="flex bg-neutral-100 dark:bg-black rounded w-full justify-start items-center">
-      <div className="inline-flex flex-grow-0 flex-shrink-0 items-center justify-center w-16 aspect-square bg-neutral-900 dark:bg-neutral-800 text-white rounded">
+      <div className="inline-flex flex-grow-0 flex-shrink-0 items-center justify-center w-16 aspect-square bg-gray-900 dark:bg-neutral-800 text-white rounded">
         <div className="block text-xl text-white">{icon}</div>
       </div>
       <div className="px-8">
@@ -37,7 +37,7 @@ export default function Clients() {
   return (
     <section id={`clients`}>
       <SectionTitle
-        title="Our Beloved Index"
+        title="Our Beloved Clients"
         description={`We recognise our clients are the experts in their industry. We make sure to make the best use of their knowledge to mutually achieve our goals.`}
       >
         <div className="flex flex-col space-y-4">

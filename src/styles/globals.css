@@ -5,11 +5,11 @@
 
 @layer utilities {
   .bg-default {
-    @apply bg-neutral-50 dark:bg-neutral-900
+    @apply bg-neutral-50 dark:bg-gray-900
   }
 
   .text-default {
-    @apply text-neutral-900 dark:text-neutral-50
+    @apply text-gray-900 dark:text-neutral-50
   }
 
   .title, .title-1 {
@@ -98,7 +98,7 @@
   }
 
   p {
-    @apply text-neutral-900/70 dark:text-neutral-50/70 tracking-wide
+    @apply text-gray-900/70 dark:text-neutral-50/70 tracking-wide
   }
 
 }

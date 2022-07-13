@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Decentum | We help grow the future Industry</title>
+        <title>Decentum – We help grow the future Industry</title>
         <meta name="description" content="Decentum" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

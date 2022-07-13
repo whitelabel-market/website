@@ -35,8 +35,8 @@ export default function ButtonBase({
 
   const sizeClass = {
     xs: `h-6 text-xs ${onlyIcon ? `w-6` : `space-x-0.5 w-auto py-0.25 px-1`}`,
-    sm: `h-8 text-xs ${onlyIcon ? `w-8` : `space-x-1 w-auto py-0.5 px-2`}`,
-    md: `h-14 text-sm ${onlyIcon ? `w-14` : `space-x-2 w-auto py-1 px-10`}`,
+    sm: `h-10 text-sm ${onlyIcon ? `w-10` : `space-x-1 w-auto py-1W px-6`}`,
+    md: `h-14 text-sm ${onlyIcon ? `w-14` : `space-x-2 w-auto py-2 px-10`}`,
     lg: `h-16 text-base ${onlyIcon ? `w-16` : `space-x-2 w-auto py-2 px-14`}`,
     xl: `h-18 text-lg ${onlyIcon ? `w-18` : `space-x-3 w-auto py-3 px-18`}`,
   }[size];
@@ -47,9 +47,9 @@ export default function ButtonBase({
     around: `justify-around`,
   }[justify];
   const colorClass = {
-    primary: `text-neutral-50 bg-neutral-900 border-neutral-900 dark:bg-neutral-50 dark:border-neutral-50 dark:text-neutral-900 hover:!bg-brand hover:!text-white hover:!border-brand`,
+    primary: `text-neutral-50 bg-gray-900 border-gray-900 dark:bg-neutral-50 dark:border-neutral-50 dark:text-gray-900 hover:!bg-brand hover:!text-white hover:!border-brand`,
     secondary: `bg-default text-default border-default hover:bg-brand hover:text-white hover:border-brand`,
-    outline: `bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-900/20 dark:border-neutral-50/20 hover:border-neutral-900/30 dark:hover:border-neutral-50/30`,
+    outline: `bg-transparent text-gray-900 dark:text-neutral-50 border-gray-900/20 dark:border-neutral-50/20 hover:border-gray-900/30 dark:hover:border-neutral-50/30`,
   }[color];
 
   const buttonClass = [

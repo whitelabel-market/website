@@ -5,11 +5,8 @@ const Home = {
   Clients: `/#clients`,
 };
 
-const CaseStudies = {
-  Home: `/`,
-  About: `/#about`,
-  Service: `/#service`,
-  'Contact us': `/#contact`,
+const Contact = {
+  Contact: `/contact`,
 };
 
 const Social = {
@@ -26,7 +23,7 @@ const Legal = {
 
 export default {
   Home,
-  'Case Studies': CaseStudies,
+  Contact: Contact,
   Social,
   Legal,
 } as Record<string, Record<string, string>>;

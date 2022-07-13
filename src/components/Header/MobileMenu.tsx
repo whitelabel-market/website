@@ -1,7 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import React from 'react';
-import DarkModeToggler from '../DarkModeToggler/DarkModeToggler';
 
 interface MobileMenuProps {
   items: Record<string, string>;
@@ -32,9 +31,7 @@ export default function MobileMenu({ items, active }: MobileMenuProps) {
                 </ul>
 
                 <ul className={`flex items-center w-full space-x-8 py-4 px-8`}>
-                  <li>
-                    <DarkModeToggler />
-                  </li>
+                  <li></li>
                 </ul>
               </div>
 
