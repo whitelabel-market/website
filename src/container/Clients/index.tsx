@@ -11,8 +11,8 @@ import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
 
 function ClientCard({ title, number, icon }: any) {
   return (
-    <div className="flex bg-neutral-100 dark:bg-gray-800 rounded w-full justify-start items-center">
-      <div className="inline-flex flex-grow-0 flex-shrink-0 items-center justify-center w-16 aspect-square bg-gray-900 dark:bg-gray-700 text-white rounded">
+    <div className="flex bg-neutral-100 dark:bg-neutral-800 rounded w-full justify-start items-center">
+      <div className="inline-flex flex-grow-0 flex-shrink-0 items-center justify-center w-16 aspect-square bg-neutral-900 dark:bg-neutral-700 text-white rounded">
         <div className="block text-xl text-white">{icon}</div>
       </div>
       <div className="px-8">

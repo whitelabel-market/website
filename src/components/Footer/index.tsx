@@ -11,7 +11,7 @@ export default function Footer() {
   } as Record<string, Record<string, string>>;
 
   return (
-    <footer className="bg-gray-800 text-white border-b-4 border-brand">
+    <footer className="bg-neutral-900 text-neutral-50 border-b-4 border-brand">
       <div className="grid md:grid-cols-12 p-8 md:p-16 gap-8 md:gap-16">
         <div className="flex flex-col md:col-span-3">
           <div className="flex flex-col space-y-8 text-white/90">

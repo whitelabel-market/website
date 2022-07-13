@@ -57,7 +57,7 @@ export default function Experience() {
                 rel="noreferrer"
                 key={technology.name + index}
                 href={technology.url}
-                className="relative flex items-center justify-center rounded-xl bg-gray-900 py-4 px-16 transition-all duration-300 hover:bg-neutral-800"
+                className="relative flex items-center justify-center rounded-xl bg-neutral-900 py-4 px-16 transition-all duration-300 hover:bg-neutral-800"
               >
                 <Image src={technology.imgUrl} alt={technology.name} />
               </a>

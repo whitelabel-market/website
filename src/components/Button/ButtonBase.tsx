@@ -47,9 +47,9 @@ export default function ButtonBase({
     around: `justify-around`,
   }[justify];
   const colorClass = {
-    primary: `text-neutral-50 bg-gray-900 border-gray-900 dark:bg-neutral-50 dark:border-neutral-50 dark:text-gray-900 hover:!bg-brand hover:!text-white hover:!border-brand`,
+    primary: `text-neutral-50 bg-neutral-900 border-neutral-900 dark:bg-neutral-50 dark:border-neutral-50 dark:text-neutral-900 hover:!bg-brand hover:!text-white hover:!border-brand`,
     secondary: `bg-default text-default border-default hover:bg-brand hover:text-white hover:border-brand`,
-    outline: `bg-transparent text-gray-900 dark:text-neutral-50 border-gray-900/20 dark:border-neutral-50/20 hover:border-gray-900/30 dark:hover:border-neutral-50/30`,
+    outline: `bg-transparent text-neutral-900 dark:text-neutral-50 border-neutral-900/20 dark:border-neutral-50/20 hover:border-neutral-900/30 dark:hover:border-neutral-50/30`,
   }[color];
 
   const buttonClass = [
