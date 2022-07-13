@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    @apply bg-default text-default
+  }
+
+  button{
+    @apply focus:ring-0 focus:outline-0
+  }
+
+  section {
+    @apply py-20;
+  }
+  section:first-of-type {
+    @apply pb-20 pt-40;
+  }
+  section:last-of-type {
+    @apply pt-20 pb-40;
+  }
+
+  p {
+    @apply text-gray-900/70 dark:text-neutral-50/70 tracking-wide
+  }
+}
 @layer utilities {
   .bg-default {
     @apply bg-neutral-50 dark:bg-gray-900
@@ -78,27 +104,4 @@
     font-weight: 700;
     src: url(../assets/fonts/SpaceGrotesk-Bold.woff2) format('woff2');
   }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-default text-default
-  }
-
-  section {
-    @apply py-20;
-  }
-  section:first-of-type {
-    @apply pb-20 pt-40;
-  }
-  section:last-of-type {
-    @apply pt-20 pb-40;
-  }
-
-  p {
-    @apply text-gray-900/70 dark:text-neutral-50/70 tracking-wide
-  }
-
 }

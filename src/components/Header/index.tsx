@@ -70,7 +70,7 @@ export default function Navbar() {
               </li>
             ))}
 
-            <li className="relative px-4 lg:px-6 after:absolute after:top-1/2 after:block after:bg-brand after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:w-px after:h-8 after:right-0 lg:after:left-px">
+            <li className="relative px-4 lg:px-6 after:absolute after:top-1/2 after:block after:bg-neutral-50/20 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:w-px after:h-8 after:right-0 lg:after:left-px">
               <SettingsPopover />
             </li>
             <li>

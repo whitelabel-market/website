@@ -25,7 +25,7 @@ function SettingsPopoverItem({
   const ItemInnerComponent = href ? `a` : `button`;
   const itemInner = (
     <ItemInnerComponent
-      className="flex w-full items-center justify-start p-2 space-x-4 text-sm hover:bg-gray-900 dark:hover:bg-gray-900 rounded"
+      className="flex w-full items-center justify-start p-2 space-x-4 hover:bg-gray-900 dark:hover:bg-gray-900 rounded"
       onClick={onClick}
     >
       {icon}

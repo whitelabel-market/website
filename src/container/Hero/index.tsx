@@ -11,15 +11,11 @@ function HeroTitle() {
       <HeroTitleContainer>
         <h1 className="text-5xl text-white lg:text-7xl font-serif">
           We help
-          <span className="relative font-black">
-            &nbsp;grow&nbsp;
-            {/*  <div className="-z-10 absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-gradient-radial from-brand/80 via-transparent to-transparent" />
-             */}
-          </span>
+          <span className="relative font-black">&nbsp;grow&nbsp;</span>
           the future industry
         </h1>
       </HeroTitleContainer>
-      <div className="relative w-full my-8 h-px bg-white/20 -z-10">
+      <div className="relative w-full my-8 h-px bg-neutral-50/20 -z-10">
         <div className="absolute left-0 w-full bottom-1/2 transform translate-y-1/2">
           <HeroTitleContainer>
             <div className="bg-brand h-1 w-20" />
