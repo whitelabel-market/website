@@ -36,7 +36,7 @@ export default function Hero() {
   return (
     <div className="relative flex min-h-screen flex-col justify-center bg-black text-white pt-32 overflow-hidden">
       <div className="absolute flex top-0 left-0 w-full h-full">
-        <div className="absolute inset-0 h-full w-full bg-black/90" />
+        <div className="absolute inset-0 h-full w-full bg-black/80" />
 
         <video className="w-full flex-1 object-cover" muted autoPlay loop>
           <source src={videos.headerVideo} type="video/mp4" />

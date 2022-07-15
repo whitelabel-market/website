@@ -16,7 +16,7 @@ const StatisticNumber = ({ number, className }: any) => {
 
       element.current && observer.observe(element.current);
 
-      return () => observer.unobserve(element.current);
+      return () => element.current && observer.unobserve(element.current);
     });
 
     return isVisible;
