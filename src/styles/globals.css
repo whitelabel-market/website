@@ -15,31 +15,32 @@
     @apply focus:ring-0 focus:outline-0
   }
 
-  section {
-    @apply py-20;
-  }
-  section:first-of-type {
-    @apply pb-20 pt-40;
-  }
-  section:last-of-type {
-    @apply pt-20 pb-40;
+  p {
+    @apply leading-relaxed
   }
 
-  p {
-    @apply text-neutral-900/70 dark:text-neutral-50/70 tracking-wide
+  section {
+    @apply py-20 lg:py-32;
   }
+  section:first-of-type {
+    @apply pb-10 pt-20 lg:pb-20 lg:pt-40;
+  }
+  section:last-of-type {
+    @apply pt-10 pb-20 lg:pt-20 lg:pb-40;
+  }
+
 }
 @layer utilities {
   .bg-default {
-    @apply bg-neutral-50 dark:bg-neutral-900
+    @apply bg-black
   }
 
   .text-default {
-    @apply text-neutral-900 dark:text-neutral-50
+    @apply text-neutral-50
   }
 
   .title, .title-1 {
-    @apply relative font-serif text-5xl md:text-6xl; 
+    @apply relative font-serif text-5xl md:text-6xl;
   }
 
   .title-2 {
@@ -70,38 +71,26 @@
 
 @layer base {
   @font-face {
-    font-family: Qanelas;
+    font-family: Area;
     font-weight: 300;
-    src: url(../assets/fonts/QanelasLight.woff) format('woff');
+    src: url(../assets/fonts/Area/AreaNormalTrial-Light.otf) format('opentype');
   }
 
   @font-face {
-    font-family: Qanelas;
+    font-family: Area;
     font-weight: 400;
-    src: url(../assets/fonts/QanelasRegular.woff) format('woff');
+    src: url(../assets/fonts/Area/AreaNormalTrial-Regular.otf) format('opentype');
   }
 
   @font-face {
-    font-family: Qanelas;
+    font-family: Area;
     font-weight: 600;
-    src: url(../assets/fonts/QanelasSemiBold.woff) format('woff');
+    src: url(../assets/fonts/Area/AreaNormalTrial-Semibold.otf) format('opentype');
   }
 
   @font-face {
-    font-family: Qanelas;
-    font-weight: 700;
-    src: url(../assets/fonts/QanelasBold.woff) format('woff');
-  }
-
-  @font-face {
-    font-family: Space Grotesk;
-    font-weight: 400;
-    src: url(../assets/fonts/SpaceGrotesk-Regular.woff2) format('woff2');
-  }
-
-  @font-face {
-    font-family: Space Grotesk;
-    font-weight: 700;
-    src: url(../assets/fonts/SpaceGrotesk-Bold.woff2) format('woff2');
+    font-family: Area;
+    font-weight: 800;
+    src: url(../assets/fonts/Area/AreaNormalTrial-Bold.otf) format('opentype');
   }
 }

@@ -7,24 +7,26 @@ import Header from '@/components/Header';
 
 import '../styles/globals.css';
 import Footer from '@/components/Footer';
-import SettingsPopover from '@/components/Header/SettingsPopover';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider attribute="class">
-        <div>
-          <Header />
+      <ParallaxProvider>
+        <ThemeProvider attribute="class">
+          <div>
+            <Header />
 
-          <main>
-            <Component {...pageProps} />
-          </main>
+            <main>
+              <Component {...pageProps} />
+            </main>
 
-          <Footer />
-        </div>
-      </ThemeProvider>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </ParallaxProvider>
     </>
   );
 }

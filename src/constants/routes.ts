@@ -10,10 +10,10 @@ const Contact = {
 };
 
 const Social = {
-  Dribble: `/`,
-  Behance: `/`,
-  Instagram: `/`,
-  Twitter: `/`,
+  Tw: `/`,
+  Ig: `/`,
+  Fb: `/`,
+  Gi: `/`,
 };
 
 const Legal = {

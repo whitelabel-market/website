@@ -23,17 +23,14 @@ export default function MobileMenuButton({
 }: MobileMenuButtonProps) {
   return (
     <button
-      className="relative w-8 pointer-events-auto h-8 lg:hidden overflow-hidden"
+      className="relative w-12 pointer-events-auto h-6 overflow-hidden"
       onClick={menuActive ? closeMenu : openMenu}
     >
       <MobileMenuButtonLine
-        className={`top-2 -translate-y-1/2 ${menuActive && `rotate-45 top-4`}`}
+        className={`top-2.5 -translate-y-px ${menuActive && `rotate-45 top-4`}`}
       />
       <MobileMenuButtonLine
-        className={`top-4 -translate-y-1/2 ${menuActive && `hidden`}`}
-      />
-      <MobileMenuButtonLine
-        className={`bottom-2 translate-y-1/2 ${
+        className={`bottom-2.5 translate-y-px ${
           menuActive && `-rotate-45 top-4`
         }`}
       />

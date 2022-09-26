@@ -4,6 +4,8 @@ import Hero from '@/container/Hero';
 import About from '@/container/About/';
 import Features from '@/container/Features';
 import Clients from '@/container/Clients';
+import Mission from '@/container/Mission';
+import Expertise from '@/container/Expertise';
 
 export default function Home() {
   return (
@@ -16,8 +18,10 @@ export default function Home() {
 
       <Hero />
       <About />
+      <Mission />
       <Features />
       <Clients />
+      <Expertise />
     </>
   );
 }

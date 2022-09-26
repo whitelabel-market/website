@@ -1,50 +1,24 @@
 import React from 'react';
-import { videos } from '@/constants';
-
-function HeroTitleContainer({ children }: React.PropsWithChildren<any>) {
-  return <div className="container max-w-xl mx-auto px-8">{children}</div>;
-}
-
-function HeroTitle() {
-  return (
-    <div className="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-20">
-      <HeroTitleContainer>
-        <h1 className="text-5xl text-white lg:text-7xl font-serif">
-          We help
-          <span className="relative font-black">&nbsp;grow&nbsp;</span>
-          the future industry
-        </h1>
-      </HeroTitleContainer>
-      <div className="relative w-full my-8 h-px bg-neutral-50/20 -z-10">
-        <div className="absolute left-0 w-full bottom-1/2 transform translate-y-1/2">
-          <HeroTitleContainer>
-            <div className="bg-brand h-1 w-20" />
-          </HeroTitleContainer>
-        </div>
-      </div>
-      <HeroTitleContainer>
-        <p className="!text-white">
-          Be part of the digital revolution and get the most of the value of the
-          internet
-        </p>
-      </HeroTitleContainer>
-    </div>
-  );
-}
+import Blob from '@/components/Blob';
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-screen flex-col justify-center bg-black text-white pt-32 overflow-hidden">
-      <div className="absolute flex top-0 left-0 w-full h-full">
-        <div className="absolute inset-0 h-full w-full bg-black/80" />
+    <div className={`sticky top-0 left-0 -z-10`}>
+      <Blob />
 
-        <video className="w-full flex-1 object-cover" muted autoPlay loop>
-          <source src={videos.headerVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div
+        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[6vh] lg:mt-[16vh] flex flex-col space-y-12 justify-center container w-full max-w-4xl p-4 lg:p-16 text-white mix-blend-difference`}
+      >
+        <h1 className={`text-7xl text-neutral-400 leading-tight`}>
+          We help grow the Future Industry
+        </h1>
+        <div className={`w-full max-w-sm`}>
+          <h2 className={`text-lg`}>
+            Be part of the digital revolution and get the most of the value of
+            the internet
+          </h2>
+        </div>
       </div>
-
-      <HeroTitle />
     </div>
   );
 }

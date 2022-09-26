@@ -22,6 +22,9 @@ import polkadot from '@/assets/images/polkadot.png';
 import stelalabs from '@/assets/images/stelalabs.png';
 import warp from '@/assets/images/warp.png';
 import experienceBg from '@/assets/images/experience-bg.jpg';
+import future from '@/assets/images/future.jpg';
+import mission from '@/assets/images/mission.webp';
+
 export default {
   logo,
   logoDark,
@@ -42,4 +45,6 @@ export default {
   stelalabs,
   warp,
   experienceBg,
+  mission,
+  future,
 };

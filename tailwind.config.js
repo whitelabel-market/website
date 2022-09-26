@@ -11,16 +11,22 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Space Grotesk', ...defaultTheme.fontFamily.serif],
-        sans: ['Qanelas', ...defaultTheme.fontFamily.sans],
+        serif: ['Area', ...defaultTheme.fontFamily.serif],
+        sans: ['Area', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         brand: '#ff4b32',
+        yellow: {
+          DEFAULT: '#e0ccbb',
+        },
+        purple: {
+          DEFAULT: '#e4cbcb',
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

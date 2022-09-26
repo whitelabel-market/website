@@ -1,53 +1,63 @@
-import React from 'react';
-import { images } from '@/constants';
-import {
-  IoInformationCircleOutline,
-  IoTrendingUpOutline,
-} from 'react-icons/io5';
-import Card from '@/components/Card';
-import SectionTitle from '@/components/SectionTitle';
-import Link from 'next/link';
-import { ButtonPrimary } from '@/components/Button';
+import React, { useEffect, useRef } from 'react';
+import Tag from '@/components/Tag';
+import { gsap } from 'gsap';
 
-const Index = () => {
-  const teams = [
-    {
-      name: `Clemens Kauschke`,
-      role: `Senior UX Designer`,
-      image: images.clemens,
-    },
-    { name: `Manuel Grund`, role: `Senior IxD`, image: images.manuel },
-    {
-      name: `Arthur Grabowski`,
-      role: `Creative Director`,
-      image: images.arthur,
-    },
-    { name: `Marco Weh`, role: `Motion Designer`, image: images.marco },
-    { name: `Harvey Specter`, role: `Lawyer`, image: images.harvey },
-    { name: `Paul Richter`, role: `Senior UX Researcher`, image: images.paul },
-  ];
+export default function About() {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const vars = { opacity: 0, y: 8.5 };
+    gsap.from(aboutRef?.current, {
+      ...vars,
+      scrollTrigger: {
+        trigger: aboutRef?.current,
+        start: `center bottom`,
+        end: `center center`,
+        scrub: true,
+      },
+    });
+
+    gsap.to(aboutRef?.current, {
+      ...vars,
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: aboutRef?.current,
+        start: `bottom center`,
+        end: `bottom top`,
+        scrub: true,
+      },
+    });
+  });
+
   return (
-    <section id="about">
-      <SectionTitle title={`Kick Start Your Product With Us`} />
-      <div className="w-full max-w-5xl mx-auto space-y-8 px-8 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          <Card title={`Who we Are`} icon={<IoInformationCircleOutline />}>
-            We are a young German-speaking team of excellent programmers,
-            computer scientists and Web 3.0 enthusiasts. We are based in Germany
-            - Berlin. Therefore, German quality standards are important to us.
-          </Card>
+    <section
+      id="about"
+      className={`bg-black text-yellow flex flex-col justify-center min-h-screen`}
+    >
+      <div
+        className="container w-full max-w-4xl mx-auto px-8 lg:px-16 space-y-16"
+        ref={aboutRef}
+      >
+        <Tag color={`yellow`}>About</Tag>
 
-          <Card title={`Our Mission`} icon={<IoTrendingUpOutline />}>
+        <h2 className={`text-6xl leading-tight`}>
+          Kickstart your Product With Us
+        </h2>
+
+        <div className={`w-full max-w-lg space-y-8`}>
+          <p className={`text-[#e0ccbb] text-lg`}>
+            We are a young German-speaking team of excellent programmers,
+            computer scientists and Web 3.0 enthusiasts based in Germany -
+            Berlin.
+          </p>
+
+          {/*
+          <p className={`text-[#e0ccbb]`}>
             We believe that the future of the internet and Web3 will be driven
             by transparent and open communities and it is our mission to speed
             up this shift for our clients.
-          </Card>
-
-          <div className="lg:col-span-2 flex justify-center">
-            <Link href={`/#`} passHref>
-              <ButtonPrimary>Get Started</ButtonPrimary>
-            </Link>
-          </div>
+          </p>
+*/}
         </div>
       </div>
 
@@ -71,6 +81,4 @@ const Index = () => {
 */}
     </section>
   );
-};
-
-export default Index;
+}
