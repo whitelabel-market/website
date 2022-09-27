@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
 import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { isMobile } from 'react-device-detect';
 
 const noise3D = createNoise3D();
 
@@ -16,8 +17,6 @@ function DisableRender() {
 }
 
 function BlobCamera() {
-  const isMobile = false;
-
   return (
     <PerspectiveCamera
       makeDefault
@@ -25,12 +24,12 @@ function BlobCamera() {
       near={0.1}
       far={1e3}
       position={[-0.5, 0, 2]}
-      lookAt={() => new THREE.Vector3(isMobile ? -0.8 : -0.4, 0, 0)}
+      lookAt={() => new THREE.Vector3(isMobile ? 1 : -0.4, 0, 0)}
     />
   );
 }
 
-function BlobSphere() {
+function SphereGeometry(props: any) {
   const sphereRef = useRef<THREE.SphereGeometry>(null);
   const vector = new THREE.Vector3();
 
@@ -54,12 +53,20 @@ function BlobSphere() {
     }
   });
 
+  return <sphereGeometry ref={sphereRef} {...props} />;
+}
+
+function BlobSphere() {
   return (
     <mesh>
-      <sphereGeometry ref={sphereRef} args={[1, 128, 128]} />
-      <meshPhongMaterial color={2434341} shininess={10} />
+      <SphereGeometry args={[1, 128, 128]} />
+      <meshPhongMaterial color={2434341} />
     </mesh>
   );
+}
+
+function DirectionalLight(props: any) {
+  return <directionalLight color={16777215} {...props} />;
 }
 
 export default function Blob() {
@@ -87,18 +94,8 @@ export default function Blob() {
 
         <BlobCamera />
         <BlobSphere />
-        <directionalLight
-          color={16777215}
-          intensity={1}
-          position={[0, 400, 300]}
-          castShadow
-        />
-        <directionalLight
-          color={16777215}
-          intensity={1}
-          position={[0, 200, 100]}
-          castShadow
-        />
+        <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
+        <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
       </Canvas>
     </div>
   );
