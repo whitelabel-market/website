@@ -4,7 +4,6 @@ import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
 import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { isMobile } from 'react-device-detect';
 
 const noise3D = createNoise3D();
 
@@ -24,7 +23,7 @@ function BlobCamera() {
       near={0.1}
       far={1e3}
       position={[-0.5, 0, 2]}
-      lookAt={() => new THREE.Vector3(isMobile ? 1 : -0.4, 0, 0)}
+      lookAt={() => new THREE.Vector3(-0.4, 0, 0)}
     />
   );
 }
