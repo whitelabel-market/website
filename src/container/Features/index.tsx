@@ -9,7 +9,6 @@ interface FeatureCardProps {
   aspect?: 'square' | 'video';
 }
 function FeatureCard({
-  aspect = `video`,
   video,
   subtitle,
   title,
@@ -20,7 +19,7 @@ function FeatureCard({
       <div className="relative">
         <div className={`aspect-video w-full`} />
         <video
-          className="block absolute top-0 left-0 h-full w-full object-cover"
+          className="block absolute inset-0 object-cover"
           muted
           autoPlay
           loop
@@ -30,27 +29,24 @@ function FeatureCard({
         </video>
       </div>
 
-      <div className={`w-full max-w-xl mx-auto py-8 space-y-8`}>
-        <div className={`space-y-8`}>
-          <Tag color={`purple`}>{subtitle}</Tag>
-          <h2 className="text-3xl">{title}</h2>
-        </div>
-
+      <div className={`py-8 space-y-8`}>
+        <Tag color={`purple`}>{subtitle}</Tag>
+        <h2 className="text-title-3">{title}</h2>
         {children}
       </div>
     </div>
   );
 }
 
-const Features = () => {
+export default function Features() {
   return (
     <section id={`features`} className={`bg-black text-purple`}>
-      <div className={`container max-w-6xl px-4 lg:px-8 mx-auto`}>
-        <ul className="grid lg:grid-cols-2 gap-16">
+      <div className={`container-default`}>
+        <ul className="grid lg:grid-cols-2 gap-16 lg:gap-32">
           <li>
             <FeatureCard
               title={`Bringing the Web 3.0 era to its maximum potential`}
-              subtitle={`Strategic support for blockchain ecosystems`}
+              subtitle={`Blockchain Ecosystems`}
               video={videos.featureVideo1}
             >
               <p>
@@ -65,7 +61,7 @@ const Features = () => {
           <li>
             <FeatureCard
               title={`Realizing the most innovative ideas in blockchain`}
-              subtitle={`Incubation of our projects`}
+              subtitle={`Project Incubation`}
               video={videos.featureVideo2}
             >
               <p>
@@ -82,6 +78,4 @@ const Features = () => {
       </div>
     </section>
   );
-};
-
-export default Features;
+}

@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-default text-default
+    @apply bg-black text-neutral-50
   }
 
   button{
@@ -20,43 +20,29 @@
   }
 
   section {
-    @apply py-20 lg:py-32;
-  }
-  section:first-of-type {
-    @apply pb-10 pt-20 lg:pb-20 lg:pt-40;
-  }
-  section:last-of-type {
-    @apply pt-10 pb-20 lg:pt-20 lg:pb-40;
+    @apply py-40;
   }
 
 }
 @layer utilities {
-  .bg-default {
-    @apply bg-black
+  .text-title, .text-title-1 {
+    @apply relative text-4xl lg:text-6xl leading-tight lg:leading-tight;
   }
 
-  .text-default {
-    @apply text-neutral-50
+  .text-title-2 {
+    @apply relative text-5xl lg:text-7xl leading-tight lg:leading-tight;
   }
 
-  .title, .title-1 {
-    @apply relative font-serif text-5xl md:text-6xl;
+  .text-title-3{
+    @apply relative text-3xl lg:text-4xl leading-tight lg:leading-tight;
   }
 
-  .title-2 {
-    @apply relative font-serif text-3xl;
-  }
-
-  .subtitle, .subtitle-1 {
-    @apply text-brand font-semibold uppercase text-xs;
-  }
-
-  .subtitle-2 {
-    @apply text-brand font-serif capitalize text-sm
+  .text-description {
+    @apply text-base lg:text-lg leading-relaxed lg:leading-relaxed
   }
 
   .link, .link-1 {
-    @apply text-xs uppercase font-serif
+    @apply text-xs uppercase
   }
 
   .border-default {
@@ -65,6 +51,10 @@
 
   .rounded-default {
     @apply rounded
+  }
+
+  .container-default {
+    @apply container w-full mx-auto px-8 lg:px-16
   }
 }
 

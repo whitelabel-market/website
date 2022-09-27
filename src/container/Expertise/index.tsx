@@ -32,7 +32,7 @@ export default function Experience() {
 
   return (
     <>
-      <section className={`relative !p-0 bg-black`}>
+      <section className={`relative !pt-0 bg-black`}>
         <span className={`absolute top-0 left-0 h-1/3 w-full bg-neutral-400`} />
         <div className={`relative w-full lg:w-2/3`}>
           <ParallaxBanner
@@ -54,25 +54,23 @@ export default function Experience() {
         </div>
       </section>
       <section className={`bg-black text-yellow`}>
-        <div className="container max-w-4xl w-full mx-auto px-8 lg:px-16 space-y-16">
-          <div className={`w-full max-w-lg space-y-16`}>
+        <div className={`container-default grid lg:grid-cols-4 gap-16`}>
+          <div className={`lg:col-start-2 lg:col-span-2 space-y-16`}>
             <Tag color={`yellow`}>Expertise</Tag>
 
-            <h2 className={`text-5xl leading-tight`}>
+            <h2 className={`text-title`}>
               Building the digital economy of tomorrow
             </h2>
 
-            <div className={`w-full`}>
-              <p>
-                We invest in the most innovative ideas that address unmet market
-                needs in finance and technology. We are particularly interested
-                in distributed ledger technologies which enable innovation
-                across a wide range of industries.
-              </p>
-            </div>
+            <p className={`text-description`}>
+              We invest in the most innovative ideas that address unmet market
+              needs in finance and technology. We are particularly interested in
+              distributed ledger technologies which enable innovation across a
+              wide range of industries.
+            </p>
           </div>
 
-          <div className="grid gap-4 lg:gap-16 grid-cols-2 lg:grid-cols-4">
+          <div className="lg:col-start-2 lg:col-span-3 grid gap-8 lg:gap-16 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {technologies.map((technology, index) => (
               <a
                 target="_blank"

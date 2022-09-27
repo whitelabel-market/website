@@ -27,13 +27,13 @@ export default function Mission() {
       id="mission"
       className={`relative bg-black text-yellow flex items-center w-full min-h-screen`}
     >
-      <div className="relative container w-full max-w-4xl mx-auto px-8 lg:px-16 space-y-16 z-20">
+      <div className="relative container-default !max-w-4xl space-y-16 z-20">
         <Tag color={`yellow`}>Future vision</Tag>
 
-        <h2 className={`text-6xl leading-tight`}>We are on a mission</h2>
+        <h2 className={`text-title`}>We are on a mission</h2>
 
         <div className={`w-full max-w-lg space-y-8`}>
-          <p className={`text-yellow text-lg`}>
+          <p className={`text-description`}>
             We believe that the future of the internet and Web3 will be driven
             by transparent and open communities and it is our mission to speed
             up this shift for our clients.
