@@ -3,6 +3,7 @@ import { images } from '@/constants';
 import Image from 'next/image';
 import Tag from '@/components/Tag';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import Animation from '@/components/Animation';
 
 export default function Experience() {
   const technologies = [
@@ -54,7 +55,7 @@ export default function Experience() {
         </div>
       </section>
       <section className={`bg-black text-yellow`}>
-        <div className={`container-default grid lg:grid-cols-4 gap-16`}>
+        <Animation className={`container-default grid lg:grid-cols-4 gap-16`}>
           <div className={`lg:col-start-2 lg:col-span-2 space-y-16`}>
             <Tag color={`yellow`}>Expertise</Tag>
 
@@ -83,7 +84,7 @@ export default function Experience() {
               </a>
             ))}
           </div>
-        </div>
+        </Animation>
       </section>
     </>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Tag from '@/components/Tag';
+import Animation from '@/components/Animation';
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       id="about"
       className={`bg-black text-yellow flex flex-col justify-center min-h-screen`}
     >
-      <div className="container-default !max-w-4xl space-y-16">
+      <Animation className="container-default !max-w-4xl space-y-16">
         <Tag color={`yellow`}>About</Tag>
 
         <h2 className={`text-title`}>Kickstart your Product With Us</h2>
@@ -19,7 +20,7 @@ export default function About() {
             Berlin.
           </p>
         </div>
-      </div>
+      </Animation>
     </section>
   );
 }

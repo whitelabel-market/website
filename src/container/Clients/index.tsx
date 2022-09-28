@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoBulbOutline, IoHeart, IoRocketOutline } from 'react-icons/io5';
 import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
+import Animation from '@/components/Animation';
 
 function ClientCard({ title, number, index }: any) {
   return (
@@ -27,7 +28,7 @@ export default function Clients() {
 
   return (
     <section id={`clients`} className={`bg-neutral-400 text-black`}>
-      <div className={`container-default grid lg:grid-cols-4 gap-16`}>
+      <Animation className={`container-default grid lg:grid-cols-4 gap-16`}>
         <div className={`lg:col-start-2 lg:col-span-2 space-y-16`}>
           <h2 className={`text-title`}>
             Our Beloved <br />
@@ -46,7 +47,7 @@ export default function Clients() {
             ))}
           </div>
         </div>
-      </div>
+      </Animation>
       {/*
       <div>
         <ul

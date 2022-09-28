@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Tag from '@/components/Tag';
 import { gsap } from 'gsap';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import Animation from '@/components/Animation';
 
 export default function Mission() {
   const imageRef = useRef(null);
@@ -27,7 +28,7 @@ export default function Mission() {
       id="mission"
       className={`relative bg-black text-yellow flex items-center w-full min-h-screen`}
     >
-      <div className="relative container-default !max-w-4xl space-y-16 z-20">
+      <Animation className="relative container-default !max-w-4xl space-y-16 z-20">
         <Tag color={`yellow`}>Future vision</Tag>
 
         <h2 className={`text-title`}>We are on a mission</h2>
@@ -39,7 +40,7 @@ export default function Mission() {
             up this shift for our clients.
           </p>
         </div>
-      </div>
+      </Animation>
 
       <div ref={imageRef} className={`absolute inset-0 flex z-10`}>
         <ParallaxBanner
