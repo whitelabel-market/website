@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import '../styles/globals.css';
 import Footer from '@/components/Footer';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Body from '@/components/Body';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,9 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <div>
             <Header />
 
-            <main>
+            <Body>
               <Component {...pageProps} />
-            </main>
+            </Body>
 
             <Footer />
           </div>

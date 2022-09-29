@@ -1,10 +1,10 @@
 import React from 'react';
 import Blob from '@/components/Blob';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, useParallaxController } from 'react-scroll-parallax';
 
 export default function Hero() {
   return (
-    <div className={`sticky top-0 left-0 -z-10`}>
+    <div className={`sticky top-0 left-0 -z-10 h-screen overflow-hidden`}>
       <Parallax speed={24} opacity={[2, 0]}>
         <Blob />
         <div
