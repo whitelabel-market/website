@@ -2,8 +2,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
-import { useEffect, useRef, useState } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useState } from 'react';
 
 const noise3D = createNoise3D();
 
@@ -70,18 +69,7 @@ function DirectionalLight(props: any) {
 
 export default function Blob() {
   const blobRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    ScrollTrigger.create({
-      trigger: blobRef.current,
-      onToggle: (self) => {
-        if (!!blobRef.current) {
-          setInView(self.isActive);
-        }
-      },
-    });
-  }, []);
+  const [inView, setInView] = useState(true);
 
   return (
     <div

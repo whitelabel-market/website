@@ -1,7 +1,6 @@
 import { videos } from '@/constants';
 import React from 'react';
 import Tag from '@/components/Tag';
-import Animation from '@/components/Animation';
 
 interface FeatureCardProps {
   video: string;
@@ -16,7 +15,7 @@ function FeatureCard({
   children,
 }: React.PropsWithChildren<FeatureCardProps>) {
   return (
-    <Animation className="flex flex-col">
+    <div className="flex flex-col">
       <div className="relative">
         <div className={`aspect-video w-full`} />
         <video
@@ -35,7 +34,7 @@ function FeatureCard({
         <h2 className="text-title-3">{title}</h2>
         {children}
       </div>
-    </Animation>
+    </div>
   );
 }
 
