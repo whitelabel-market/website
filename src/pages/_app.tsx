@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
+import { ScrollerMotion } from 'scroller-motion';
 import Header from '@/components/Header';
 
 import '../styles/globals.css';
@@ -11,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider attribute="class">
-        <div>
+        <ScrollerMotion>
           <Header />
 
           <Body>
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </Body>
 
           <Footer />
-        </div>
+        </ScrollerMotion>
       </ThemeProvider>
     </>
   );

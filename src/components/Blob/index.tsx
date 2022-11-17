@@ -2,7 +2,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useScrollerMotion } from 'scroller-motion';
+import { useInView } from 'framer-motion';
 
 const noise3D = createNoise3D();
 
@@ -69,7 +71,7 @@ function DirectionalLight(props: any) {
 
 export default function Blob() {
   const blobRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(true);
+  const isInView = useInView(blobRef);
 
   return (
     <div
@@ -77,7 +79,7 @@ export default function Blob() {
       className={`relative w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
     >
       <Canvas>
-        {!inView && <DisableRender />}
+        {!isInView && <DisableRender />}
 
         <BlobCamera />
         <BlobSphere />
