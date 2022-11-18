@@ -68,10 +68,6 @@ function DirectionalLight(props: any) {
   return <directionalLight color={16777215} {...props} />;
 }
 
-interface BlobProps {
-  sticky?: boolean;
-}
-
 function BlobCanvas({ isInView }: { isInView: boolean }) {
   return (
     <Canvas>
@@ -85,7 +81,7 @@ function BlobCanvas({ isInView }: { isInView: boolean }) {
   );
 }
 
-export default function Blob({ sticky }: BlobProps) {
+export default function Blob() {
   const blobRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -105,13 +101,7 @@ export default function Blob({ sticky }: BlobProps) {
       ref={blobRef}
       className={`w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
     >
-      {!sticky ? (
-        <BlobCanvas isInView={isInView} />
-      ) : (
-        <div className={`absolute top-0 left-0 w-full h-full`}>
-          <BlobCanvas isInView={isInView} />
-        </div>
-      )}
+      <BlobCanvas isInView={isInView} />
     </div>
   );
 }
