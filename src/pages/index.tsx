@@ -15,7 +15,6 @@ export default function Home() {
         <meta name="description" content="Decentum" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Hero />
       <About />
       <Mission />

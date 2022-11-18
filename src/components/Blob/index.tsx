@@ -3,7 +3,7 @@ import { PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
 import { useEffect, useRef, useState } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const noise3D = createNoise3D();
 
@@ -68,34 +68,40 @@ function DirectionalLight(props: any) {
   return <directionalLight color={16777215} {...props} />;
 }
 
+function BlobCanvas({ isInView }: { isInView: boolean }) {
+  return (
+    <Canvas>
+      {!isInView && <DisableRender />}
+
+      <BlobCamera />
+      <BlobSphere />
+      <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
+      <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
+    </Canvas>
+  );
+}
+
 export default function Blob() {
   const blobRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     ScrollTrigger.create({
       trigger: blobRef.current,
       onToggle: (self) => {
-        if (!!blobRef.current) {
-          setInView(self.isActive);
+        if (!!blobRef.current && self.isActive != isInView) {
+          setIsInView(self.isActive);
         }
       },
     });
-  }, []);
+  });
 
   return (
     <div
       ref={blobRef}
-      className={`relative w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
+      className={`w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
     >
-      <Canvas>
-        {!inView && <DisableRender />}
-
-        <BlobCamera />
-        <BlobSphere />
-        <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
-        <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
-      </Canvas>
+      <BlobCanvas isInView={isInView} />
     </div>
   );
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import { images } from '@/constants';
 import Image from 'next/image';
 import Tag from '@/components/Tag';
-import { ParallaxBanner } from 'react-scroll-parallax';
-import Animation from '@/components/Animation';
 
 export default function Experience() {
   const technologies = [
@@ -36,26 +34,18 @@ export default function Experience() {
       <section className={`relative !pt-0 bg-black`}>
         <span className={`absolute top-0 left-0 h-1/3 w-full bg-neutral-400`} />
         <div className={`relative w-full lg:w-2/3`}>
-          <ParallaxBanner
-            layers={[
-              {
-                speed: 12,
-                children: (
-                  <Image
-                    className={`absolute inset-0 object-cover`}
-                    src={images.future}
-                    alt={`Future`}
-                    layout={`fill`}
-                  />
-                ),
-              },
-            ]}
-            className={`aspect-video`}
+          <span className={`block w-full aspect-video`} />
+          <Image
+            className={`absolute top-0 left-0 w-full h-full`}
+            src={images.future}
+            alt={`Future`}
+            layout={`fill`}
           />
         </div>
       </section>
+
       <section className={`bg-black text-yellow`}>
-        <Animation className={`container-default grid lg:grid-cols-4 gap-16`}>
+        <div className={`container-default grid lg:grid-cols-4 gap-16`}>
           <div className={`lg:col-start-2 lg:col-span-2 space-y-16`}>
             <Tag color={`yellow`}>Expertise</Tag>
 
@@ -84,7 +74,7 @@ export default function Experience() {
               </a>
             ))}
           </div>
-        </Animation>
+        </div>
       </section>
     </>
   );

@@ -1,33 +1,27 @@
 import React from 'react';
 import { ThemeProvider } from 'next-themes';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import Header from '@/components/Header';
-
 import '../styles/globals.css';
+import '../styles/locomotive-scroll.css';
 import Footer from '@/components/Footer';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import Body from '@/components/Body';
-
-gsap.registerPlugin(ScrollTrigger);
+import Scroller from '@/components/Scroller';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ParallaxProvider>
-        <ThemeProvider attribute="class">
-          <div>
-            <Header />
+      <ThemeProvider attribute="class">
+        <Header />
 
-            <Body>
-              <Component {...pageProps} />
-            </Body>
+        <Scroller>
+          <Body>
+            <Component {...pageProps} />
+          </Body>
 
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </ParallaxProvider>
+          <Footer />
+        </Scroller>
+      </ThemeProvider>
     </>
   );
 }
