@@ -2,9 +2,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
-import Parallax from '@/components/Parallax';
+import { useEffect, useRef, useState } from 'react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const noise3D = createNoise3D();
 
@@ -88,7 +87,18 @@ function BlobCanvas({ isInView }: { isInView: boolean }) {
 
 export default function Blob({ sticky }: BlobProps) {
   const blobRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(blobRef);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: blobRef.current,
+      onToggle: (self) => {
+        if (!!blobRef.current && self.isActive != isInView) {
+          setIsInView(self.isActive);
+        }
+      },
+    });
+  });
 
   return (
     <div
@@ -98,13 +108,9 @@ export default function Blob({ sticky }: BlobProps) {
       {!sticky ? (
         <BlobCanvas isInView={isInView} />
       ) : (
-        <Parallax
-          passRef={blobRef}
-          inputRangeOrTransformer={(value: number) => 0.9 * value}
-          className={`absolute top-0 left-0 w-full h-full`}
-        >
+        <div className={`absolute top-0 left-0 w-full h-full`}>
           <BlobCanvas isInView={isInView} />
-        </Parallax>
+        </div>
       )}
     </div>
   );

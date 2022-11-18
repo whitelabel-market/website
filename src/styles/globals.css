@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html,
-  body {
-    overscroll-behavior: none;
-  }
 
   body {
     @apply bg-black text-neutral-50

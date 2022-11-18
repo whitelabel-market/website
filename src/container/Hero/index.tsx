@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
-import Parallax from '@/components/Parallax';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -15,11 +14,7 @@ export default function Hero() {
       <div
         className={`absolute container-default !max-w-4xl flex flex-col justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[6vh] lg:mt-[16vh] mix-blend-difference`}
       >
-        <Parallax
-          passRef={heroRef}
-          inputRangeOrTransformer={(value: number) => 0.6 * value}
-          className={`space-y-16`}
-        >
+        <div className={`space-y-16`}>
           <h1 className={`text-title-2 text-neutral-400`}>
             We help grow the Future Industry
           </h1>
@@ -29,7 +24,7 @@ export default function Hero() {
               the internet
             </h2>
           </div>
-        </Parallax>
+        </div>
       </div>
     </div>
   );
