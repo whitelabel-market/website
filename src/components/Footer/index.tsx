@@ -8,6 +8,8 @@ export default function Footer() {
 
   return (
     <footer className="relative h-screen text-yellow overflow-hidden">
+      <Blob />
+
       <div
         className={`absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-end`}
       >
@@ -70,7 +72,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <Blob />
     </footer>
   );
 }

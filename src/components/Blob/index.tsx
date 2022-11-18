@@ -2,9 +2,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
-import { useEffect, useRef, useState } from 'react';
-import { useScrollerMotion } from 'scroller-motion';
+import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import Parallax from '@/components/Parallax';
 
 const noise3D = createNoise3D();
 
@@ -69,23 +69,43 @@ function DirectionalLight(props: any) {
   return <directionalLight color={16777215} {...props} />;
 }
 
-export default function Blob() {
+interface BlobProps {
+  sticky?: boolean;
+}
+
+function BlobCanvas({ isInView }: { isInView: boolean }) {
+  return (
+    <Canvas>
+      {!isInView && <DisableRender />}
+
+      <BlobCamera />
+      <BlobSphere />
+      <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
+      <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
+    </Canvas>
+  );
+}
+
+export default function Blob({ sticky }: BlobProps) {
   const blobRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(blobRef);
 
   return (
     <div
       ref={blobRef}
-      className={`relative w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
+      className={`w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
     >
-      <Canvas>
-        {!isInView && <DisableRender />}
-
-        <BlobCamera />
-        <BlobSphere />
-        <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
-        <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
-      </Canvas>
+      {!sticky ? (
+        <BlobCanvas isInView={isInView} />
+      ) : (
+        <Parallax
+          passRef={blobRef}
+          inputRangeOrTransformer={(value: number) => 0.9 * value}
+          className={`absolute top-0 left-0 w-full h-full`}
+        >
+          <BlobCanvas isInView={isInView} />
+        </Parallax>
+      )}
     </div>
   );
 }

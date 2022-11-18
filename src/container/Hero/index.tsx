@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
+import Parallax from '@/components/Parallax';
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
   return (
-    <div className={`sticky top-0 left-0 -z-10 h-screen overflow-hidden`}>
-      <Blob />
+    <div
+      className={`relative top-0 left-0 w-full h-screen overflow-hidden`}
+      ref={heroRef}
+    >
+      <Blob sticky={true} />
+
       <div
         className={`absolute container-default !max-w-4xl flex flex-col justify-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[6vh] lg:mt-[16vh] mix-blend-difference`}
       >
-        <div className={`space-y-16`}>
+        <Parallax
+          passRef={heroRef}
+          inputRangeOrTransformer={(value: number) => 0.6 * value}
+          className={`space-y-16`}
+        >
           <h1 className={`text-title-2 text-neutral-400`}>
             We help grow the Future Industry
           </h1>
@@ -18,7 +29,7 @@ export default function Hero() {
               the internet
             </h2>
           </div>
-        </div>
+        </Parallax>
       </div>
     </div>
   );
