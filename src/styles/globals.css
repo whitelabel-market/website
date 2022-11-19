@@ -23,20 +23,25 @@
 }
 @layer utilities {
   .text-title, .text-title-1 {
-    @apply relative text-4xl lg:text-6xl leading-tight lg:leading-tight;
+    @apply relative text-4xl lg:text-6xl leading-normal lg:leading-tight;
   }
 
   .text-title-2 {
-    @apply relative text-5xl lg:text-7xl leading-tight lg:leading-tight;
+    @apply relative text-5xl lg:text-7xl leading-normal lg:leading-tight;
   }
 
   .text-title-3{
-    @apply relative text-3xl lg:text-4xl leading-tight lg:leading-tight;
+    @apply relative text-2xl lg:text-3xl leading-normal lg:leading-tight;
   }
 
-  .text-description {
-    @apply text-base lg:text-lg leading-relaxed lg:leading-relaxed
+  .text-description, .text-description-1 {
+    @apply text-base lg:text-lg leading-loose lg:leading-loose
   }
+
+  .text-description-2 {
+    @apply text-sm leading-loose lg:leading-loose
+  }
+
 
   .link, .link-1 {
     @apply text-xs uppercase

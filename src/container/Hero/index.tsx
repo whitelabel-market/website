@@ -18,9 +18,13 @@ export default function Hero() {
       </div>
 
       <div
-        className={`absolute container-default !max-w-4xl flex flex-col justify-center top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2  lg:mt-[32vh] mix-blend-difference`}
+        className={`absolute container-default !max-w-4xl flex flex-col justify-center top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference`}
       >
-        <div className={`space-y-16`} data-scroll data-scroll-speed="-9">
+        <div
+          className={`space-y-12 lg:pt-[32vh]`}
+          data-scroll
+          data-scroll-speed="-9"
+        >
           <h1 className={`text-title-2 text-neutral-400`}>
             We help grow the Future Industry
           </h1>
