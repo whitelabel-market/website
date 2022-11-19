@@ -31,11 +31,17 @@ export default function Experience() {
 
   return (
     <>
-      <section className={`relative !pt-0 bg-black`}>
-        <span className={`absolute top-0 left-0 h-1/3 w-full bg-neutral-400`} />
-        <div className={`relative w-full lg:w-2/3`}>
+      <section className={`relative !py-0 bg-black flex flex-col`}>
+        <span
+          className={`absolute top-0 left-0 h-1/3 w-full bg-neutral-400 -mt-px`}
+        />
+        <div
+          className={`relative self-end lg:self-start w-[calc(100%_-_2rem)] lg:w-2/3 overflow-hidden`}
+        >
           <span className={`block w-full aspect-video`} />
           <Image
+            data-scroll
+            data-scroll-speed="-3"
             className={`absolute top-0 left-0 w-full h-full`}
             src={images.future}
             alt={`Future`}

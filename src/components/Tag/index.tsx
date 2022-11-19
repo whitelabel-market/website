@@ -21,9 +21,9 @@ export default function Tag({
   };
 
   return (
-    <div className={`flex items-center space-x-2`}>
+    <div className={`flex items-center`}>
       <span
-        className={`block w-12 h-px ${
+        className={`block w-6 h-px mx-2 ${
           hyphenBg[color as keyof typeof hyphenBg]
         }`}
       />

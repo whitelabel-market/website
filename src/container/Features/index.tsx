@@ -49,7 +49,7 @@ export default function Features() {
               subtitle={`Blockchain Ecosystems`}
               video={videos.featureVideo1}
             >
-              <p>
+              <p className={`text-description-2 `}>
                 Our ultimate vision is to bring Web 3.0 to its maximum
                 potential. Through decentralization, we empower users while
                 increasing efficiency, data security and transparency. We
@@ -64,7 +64,7 @@ export default function Features() {
               subtitle={`Project Incubation`}
               video={videos.featureVideo2}
             >
-              <p>
+              <p className={`text-description-2 `}>
                 Our team incubates projects with distributed technology and
                 provides the resources to build a successful product. Our goal
                 is to deliver maximum value to users while solidifying the

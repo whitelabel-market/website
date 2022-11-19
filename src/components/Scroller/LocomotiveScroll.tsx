@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { LocomotiveScrollProvider, type Scroll } from 'react-locomotive-scroll';
 
@@ -20,11 +20,11 @@ export default function LocomotiveScroll({
       }
       location={asPath}
       containerRef={containerRef}
-      onLocationChange={(lms: Scroll) =>
-        lms.scrollTo(0, { duration: 0, disableLerp: true })
-      }
+      onLocationChange={(lms: Scroll) => {
+        // lms.scrollTo(0, { duration: 0, disableLerp: true });
+      }}
     >
-      <div data-scroll-container={true} ref={containerRef}>
+      <div data-scroll-container ref={containerRef}>
         {children}
       </div>
     </LocomotiveScrollProvider>
