@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
+import ScrollFadeIn from '@/components/ScrollFadeIn';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -20,20 +21,21 @@ export default function Hero() {
       <div
         className={`absolute container-default !max-w-4xl flex flex-col justify-center top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference`}
       >
-        <div
-          className={`space-y-12 lg:pt-[32vh]`}
-          data-scroll
-          data-scroll-speed="-9"
-        >
-          <h1 className={`text-title-2 text-neutral-400`}>
-            We help grow the Future Industry
-          </h1>
-          <div className={`w-full max-w-sm`}>
-            <h2 className={`text-description`}>
-              Be part of the digital revolution and get the most of the value of
-              the internet
-            </h2>
-          </div>
+        <div data-scroll data-scroll-speed="-9">
+          <ScrollFadeIn
+            delay={0.8}
+            as={<div className={`space-y-12 lg:pt-[32vh]`} />}
+          >
+            <h1 className={`text-title-2 text-neutral-400`}>
+              We help grow the Future Industry
+            </h1>
+            <div className={`w-full max-w-sm`}>
+              <h2 className={`text-description`}>
+                Be part of the digital revolution and get the most of the value
+                of the internet
+              </h2>
+            </div>
+          </ScrollFadeIn>
         </div>
       </div>
     </div>

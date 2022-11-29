@@ -1,6 +1,7 @@
 import { videos } from '@/constants';
 import React from 'react';
 import Tag from '@/components/Tag';
+import ScrollFadeIn from '@/components/ScrollFadeIn';
 
 interface FeatureCardProps {
   video: string;
@@ -15,8 +16,8 @@ function FeatureCard({
   children,
 }: React.PropsWithChildren<FeatureCardProps>) {
   return (
-    <div className="flex flex-col">
-      <div className="relative">
+    <ScrollFadeIn as={<div className="flex flex-col space-y-8" />}>
+      <div className="relative pb-8">
         <div className={`aspect-video w-full`} />
         <video
           className="block absolute inset-0 object-cover"
@@ -29,12 +30,10 @@ function FeatureCard({
         </video>
       </div>
 
-      <div className={`py-8 space-y-8`}>
-        <Tag color={`purple`}>{subtitle}</Tag>
-        <h2 className="text-title-3">{title}</h2>
-        {children}
-      </div>
-    </div>
+      <Tag color={`purple`}>{subtitle}</Tag>
+      <h2 className="text-title-3">{title}</h2>
+      {children}
+    </ScrollFadeIn>
   );
 }
 

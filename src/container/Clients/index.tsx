@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoHeart, IoRocketOutline } from 'react-icons/io5';
 import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
+import ScrollFadeIn from '@/components/ScrollFadeIn';
 
 function ClientCard({ title, number, index }: any) {
   return (
@@ -21,14 +22,16 @@ function ClientCard({ title, number, index }: any) {
 
 export default function Clients() {
   const statistics = [
-    { number: 21, title: `Projects Completed`, icon: <IoRocketOutline /> },
-    { number: 52, title: `Happy Clients`, icon: <IoHeart /> },
+    { number: 12, title: `Projects Completed`, icon: <IoRocketOutline /> },
+    { number: 39, title: `Happy Clients`, icon: <IoHeart /> },
   ];
 
   return (
     <section id={`clients`} className={`bg-neutral-400 text-black`}>
       <div className={`container-default grid lg:grid-cols-4 gap-16`}>
-        <div className={`lg:col-start-2 lg:col-span-2 space-y-16`}>
+        <ScrollFadeIn
+          as={<div className={`lg:col-start-2 lg:col-span-2 space-y-16`} />}
+        >
           <h2 className={`text-title`}>
             Our Beloved <br />
             Clients
@@ -38,13 +41,15 @@ export default function Clients() {
             sure to make the best use of their knowledge to mutually achieve our
             goals.
           </p>
-        </div>
+        </ScrollFadeIn>
         <div className={`lg:col-start-2 lg:col-span-3`}>
-          <div className="space-y-4">
+          <ScrollFadeIn as={<div className={`space-y-4`} />}>
             {statistics.map((client, index) => (
-              <ClientCard key={index} {...client} index={index} />
+              <div key={index}>
+                <ClientCard {...client} index={index} />
+              </div>
             ))}
-          </div>
+          </ScrollFadeIn>
         </div>
       </div>
       {/*

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Tag from '@/components/Tag';
 import gsap from 'gsap';
 import { useDevice } from '@/hooks/useDevice';
+import ScrollFadeIn from '@/components/ScrollFadeIn';
 
 export default function Mission() {
   const { useEffectIfCursor } = useDevice();
@@ -33,8 +34,14 @@ export default function Mission() {
       id="mission"
       className={`relative bg-black text-yellow flex items-center w-full lg:min-h-[110vh]`}
     >
-      <div className="relative container-default !max-w-4xl space-y-12 z-20">
-        <Tag color={`yellow`}>Future vision</Tag>
+      <ScrollFadeIn
+        as={
+          <div className="relative container-default !max-w-4xl space-y-12 z-20" />
+        }
+      >
+        <div>
+          <Tag color={`yellow`}>Future vision</Tag>
+        </div>
 
         <h2 className={`text-title`}>We are on a mission</h2>
 
@@ -45,7 +52,7 @@ export default function Mission() {
             up this shift for our clients.
           </p>
         </div>
-      </div>
+      </ScrollFadeIn>
 
       <div
         ref={imageRef}
