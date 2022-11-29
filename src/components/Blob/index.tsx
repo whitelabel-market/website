@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { createNoise3D } from 'simplex-noise';
 import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useDevice } from '@/hooks/useDevice';
 
 const noise3D = createNoise3D();
 
@@ -16,6 +17,7 @@ function DisableRender() {
 }
 
 function BlobCamera() {
+  const { isTouch } = useDevice();
   return (
     <PerspectiveCamera
       makeDefault
@@ -23,7 +25,7 @@ function BlobCamera() {
       near={0.1}
       far={1e3}
       position={[-0.5, 0, 2]}
-      lookAt={() => new THREE.Vector3(-0.4, 0, 0)}
+      lookAt={() => new THREE.Vector3(isTouch ? -0.2 : -0.4, 0, 0)}
     />
   );
 }

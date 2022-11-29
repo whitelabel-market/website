@@ -1,13 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { images } from '@/constants';
 import Image from 'next/image';
 import Tag from '@/components/Tag';
 import gsap from 'gsap';
+import { useDevice } from '@/hooks/useDevice';
 
 export default function Mission() {
+  const { useEffectIfCursor } = useDevice();
   const imageRef = useRef(null);
 
-  useEffect(() => {
+  useEffectIfCursor(() => {
     const trigger = gsap.fromTo(
       imageRef.current,
       { webkitClipPath: `inset(0% 10%)` },
@@ -24,7 +26,7 @@ export default function Mission() {
     return () => {
       trigger.kill();
     };
-  }, []);
+  });
 
   return (
     <section

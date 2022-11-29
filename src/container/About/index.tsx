@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Tag from '@/components/Tag';
 import gsap from 'gsap';
+import { useDevice } from '@/hooks/useDevice';
 
 export default function About() {
+  const { useEffectIfCursor } = useDevice();
   const aboutRef = useRef(null);
 
-  useEffect(() => {
+  useEffectIfCursor(() => {
     const trigger = gsap.fromTo(
       aboutRef.current,
       { autoAlpha: 0 },
@@ -14,7 +16,7 @@ export default function About() {
         scrollTrigger: {
           trigger: aboutRef.current,
           start: `top top+=12.5%`,
-          end: `bottom center+=33%`,
+          end: `bottom center+=25%`,
           toggleActions: `play reverse restart reverse`,
         },
       },
@@ -23,7 +25,7 @@ export default function About() {
     return () => {
       trigger.kill();
     };
-  }, []);
+  });
 
   return (
     <section

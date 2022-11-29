@@ -18,7 +18,6 @@ export default function Navbar() {
 
   return (
     <>
-      <MobileMenu items={items} active={menuActive} />
       <div
         className={`flex justify-center top-0 left-0 w-full z-50 bg-transparent text-neutral-50 mix-blend-difference h-32 fixed transform pointer-events-none`}
       >
@@ -29,11 +28,6 @@ export default function Navbar() {
                 Decentum
               </span>
             </div>
-            <MobileMenuButton
-              openMenu={openMenu}
-              closeMenu={closeMenu}
-              menuActive={menuActive}
-            />
           </div>
         </nav>
       </div>

@@ -66,20 +66,6 @@ export default function Experience() {
               wide range of industries.
             </p>
           </div>
-
-          <div className="lg:col-start-2 lg:col-span-3 grid gap-8 lg:gap-16 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {technologies.map((technology, index) => (
-              <a
-                target="_blank"
-                rel="noreferrer"
-                key={technology.name + index}
-                href={technology.url}
-                className="relative flex items-center justify-center"
-              >
-                <Image src={technology.imgUrl} alt={technology.name} />
-              </a>
-            ))}
-          </div>
         </div>
       </section>
     </>
