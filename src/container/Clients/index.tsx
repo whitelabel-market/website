@@ -1,29 +1,71 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { IoHeart, IoRocketOutline } from 'react-icons/io5';
-import StatisticNumber from '@/components/StatisticNumber/StatisticNumber';
 import ScrollFadeIn from '@/components/ScrollFadeIn';
+import { Tween } from 'react-gsap';
+import { useMount } from 'react-use';
+import gsap from 'gsap';
 
-function ClientCard({ title, number, index }: any) {
+function ClientCard({ title, count, index }: any) {
+  const triggerRef = useRef(null);
+  const [counter, setCounter] = React.useState({ value: 0 });
+
+  const counterProps = {
+    ease: `none`,
+    duration: 2,
+  };
+
+  useMount(() => {
+    const target = {
+      value: counter.value,
+    };
+
+    gsap.to(target, {
+      value: `+=${count}`,
+      roundProps: `value`,
+      onUpdate() {
+        setCounter({ value: target.value });
+      },
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        toggleActions: `play reverse restart reverse`,
+      },
+      ...counterProps,
+    });
+  });
+
   return (
-    <div className="flex flex-1 items-end justify-between border-b border-black py-2 space-x-8">
-      <div className={`flex items-center space-x-4`}>
-        <span className={`block text-black/30 text-xs`}>0{index + 1}.</span>
-        <h3 className="text-2xl lg:text-3xl">{title}</h3>
+    <div
+      className="relative flex flex-1 items-end justify-between py-2"
+      ref={triggerRef}
+    >
+      <div className={`flex items-end space-x-4 `}>
+        <span className={`block tracking-wider text-sm leading-7`}>
+          0{index + 1}.
+        </span>
+        <h3 className="text-2xl lg:text-3xl ">{title}</h3>
       </div>
       <div className={`flex flex-shrink-0 items-center justify-end w-20`}>
-        <StatisticNumber
-          number={number}
-          className="text-2xl lg:text-3xl lining-nums font-bold"
-        />
+        <div className="text-2xl lg:text-3xl lining-nums font-bold">
+          {counter.value}
+        </div>
       </div>
+      <Tween
+        to={{
+          width: `100%`,
+        }}
+        progress={counter.value / count}
+        {...counterProps}
+      >
+        <span className={`block absolute bottom-0 left-0 w-0 h-px bg-black`} />
+      </Tween>
     </div>
   );
 }
 
 export default function Clients() {
-  const statistics = [
-    { number: 12, title: `Projects Completed`, icon: <IoRocketOutline /> },
-    { number: 39, title: `Happy Clients`, icon: <IoHeart /> },
+  const stats = [
+    { count: 12, title: `Projects Completed`, icon: <IoRocketOutline /> },
+    { count: 39, title: `Happy Clients`, icon: <IoHeart /> },
   ];
 
   return (
@@ -43,13 +85,13 @@ export default function Clients() {
           </p>
         </ScrollFadeIn>
         <div className={`lg:col-start-2 lg:col-span-3`}>
-          <ScrollFadeIn as={<div className={`space-y-4`} />}>
-            {statistics.map((client, index) => (
-              <div key={index}>
+          <ul className={`flex flex-col space-y-4`}>
+            {stats.map((client, index) => (
+              <li className={`block`} key={index}>
                 <ClientCard {...client} index={index} />
-              </div>
+              </li>
             ))}
-          </ScrollFadeIn>
+          </ul>
         </div>
       </div>
       {/*

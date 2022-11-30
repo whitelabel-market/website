@@ -1,45 +1,23 @@
-import React, {
-  DOMElement,
-  forwardRef,
-  PropsWithChildren,
-  RefObject,
-  useImperativeHandle,
-  useRef,
-} from 'react';
-import { Tween, ScrollTrigger, Timeline } from 'react-gsap';
+import React from 'react';
 
-interface ParallaxProps {
-  banner?: boolean;
-  passRef?: RefObject<any>;
-  className?: string;
-  from?: any;
-  to?: any;
+interface ParallaxProps<T extends React.ElementType> {
+  speed?: number;
+  as?: T;
+  children?: React.ReactNode;
 }
 
-export default function Parallax({
-  passRef,
+export default function Parallax<T extends React.ElementType = 'div'>({
   children,
-  className,
-  banner,
-  from,
-  to,
-}: React.PropsWithChildren<ParallaxProps>) {
+  speed,
+  as,
+  ...props
+}: ParallaxProps<T> &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof ParallaxProps<T>>) {
+  const Component = as || `div`;
+
   return (
-    <ScrollTrigger scrub={true} markers={true}>
-      <Tween
-        from={
-          from || {
-            y: -100,
-          }
-        }
-        to={
-          to || {
-            y: 0,
-          }
-        }
-      >
-        {children}
-      </Tween>
-    </ScrollTrigger>
+    <Component data-scroll data-scroll-speed={speed || 2} {...props}>
+      {children}
+    </Component>
   );
 }

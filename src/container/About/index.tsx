@@ -9,7 +9,7 @@ export default function About() {
   const aboutRef = useRef(null);
 
   useEffectIfCursor(() => {
-    const trigger = gsap.fromTo(
+    const tween = gsap.fromTo(
       aboutRef.current,
       { autoAlpha: 0 },
       {
@@ -24,7 +24,7 @@ export default function About() {
     );
 
     return () => {
-      trigger.kill();
+      tween.kill();
     };
   });
 

@@ -6,7 +6,7 @@ const Home = {
 };
 
 const Contact = {
-  Contact: `/contact`,
+  Contact: `mailto:hello@decentum.co`,
 };
 
 const Social = {

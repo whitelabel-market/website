@@ -29,8 +29,9 @@ function FeatureCard({
           Your browser does not support the video tag.
         </video>
       </div>
-
-      <Tag color={`purple`}>{subtitle}</Tag>
+      <div>
+        <Tag color={`purple`}>{subtitle}</Tag>
+      </div>
       <h2 className="text-title-3">{title}</h2>
       {children}
     </ScrollFadeIn>

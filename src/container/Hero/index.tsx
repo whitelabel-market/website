@@ -22,10 +22,7 @@ export default function Hero() {
         className={`absolute container-default !max-w-4xl flex flex-col justify-center top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference`}
       >
         <div data-scroll data-scroll-speed="-9">
-          <ScrollFadeIn
-            delay={0.8}
-            as={<div className={`space-y-12 lg:pt-[32vh]`} />}
-          >
+          <ScrollFadeIn as={<div className={`space-y-12 lg:pt-[32vh]`} />}>
             <h1 className={`text-title-2 text-neutral-400`}>
               We help grow the Future Industry
             </h1>

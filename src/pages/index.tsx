@@ -6,6 +6,7 @@ import Features from '@/container/Features';
 import Clients from '@/container/Clients';
 import Mission from '@/container/Mission';
 import Expertise from '@/container/Expertise';
+import Intersection from '@/container/Intersection';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Mission />
       <Features />
       <Clients />
+      <Intersection />
       <Expertise />
     </>
   );

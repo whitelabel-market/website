@@ -6,11 +6,10 @@ import Blob from '@/components/Blob';
 function FooterCta() {
   return (
     <a
-      href={`mailto:hello@decentum.co`}
-      className="relative inline-block text-8xl lg:text-9xl font-semibold opacity-90 hover:opacity-100 duration-300 group"
+      href={routes.Contact.Contact}
+      className="text-7xl sm:text-8xl lg:text-9xl link !leading-normal !after:h-0.5"
     >
-      <span className={`block`}> Let&apos;s Talk.</span>
-      <span className="block absolute bottom-0 left-0 w-0 h-0.5 bg-yellow group-hover:w-full duration-300" />
+      Let&apos;s Talk.
     </a>
   );
 }
@@ -18,7 +17,7 @@ export default function Footer() {
   const footerRoutes = [routes.Home, routes.Contact];
 
   return (
-    <footer className="relative h-screen text-yellow overflow-hidden">
+    <footer className="relative h-screen text-yellow text-sm overflow-hidden">
       <Blob />
 
       <div
@@ -28,28 +27,50 @@ export default function Footer() {
           <div className={`col-span-2 lg:col-span-10`}>
             <FooterCta />
           </div>
-          <div className={`col-span-2 lg:col-span-3`}>
+          <div className={`flex flex-col space-y-1 col-span-2 lg:col-span-3`}>
             <span
-              className={`text-4xl font-black tracking-tighter leading-tight`}
+              className={`block text-2xl font-bold tracking-tighter leading-tight`}
             >
               Decentum
+            </span>
+            <span className={`block text-xs opacity-40 font-bold`}>
+              Berlin,
+              <br />
+              Germany
             </span>
           </div>
 
           {footerRoutes.map((routeObj: Record<string, string>, i) => (
-            <div className="flex flex-col lg:col-span-2" key={i} />
+            <ul className="flex flex-col lg:col-span-2" key={i}>
+              {Object.keys(routeObj).map((name, j) => (
+                <li key={`${i}-${j}`} className={`inline-flex`}>
+                  <Link href={routeObj[name]} passHref>
+                    <a className={`link-2`}>{name}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           ))}
 
-          <div className={`col-span-2 lg:col-span-3`}>
-            <span>&copy; Copyright Decentum</span>
-            <ul>
-              <li>
-                <Link href={routes.Legal.Privacy}>Privacy policy.</Link>&nbsp;
-                <Link href={routes.Legal[`Terms of usage`]}>
-                  Terms of usage.
-                </Link>
-              </li>
-            </ul>
+          <div
+            className={`col-span-2 lg:col-span-3 space-y-12 flex flex-col justify-between`}
+          >
+            <div>
+              <button className={`link-2`}>Light Theme</button>
+            </div>
+            <div className={`text-xs`}>
+              <span className={`block`}>
+                {new Date().getFullYear()} &copy; Copyright Decentum
+              </span>
+
+              <div className={`space-x-1`}>
+                {Object.keys(routes.Legal).map((name, i) => (
+                  <Link href={routes.Legal[name]} passHref key={i}>
+                    <a className={`link-2`}>{name}.</a>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
