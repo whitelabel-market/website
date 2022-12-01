@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
 import ScrollFadeIn from '@/components/ScrollFadeIn';
 import Parallax from '@/components/Parallax';
+import ScrollIndicator from '@/container/Hero/ScrollIndicator';
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -19,10 +20,12 @@ export default function Hero() {
       </Parallax>
 
       <div
-        className={`container-default sm:max-w-xl lg:max-w-4xl flex flex-col justify-center mix-blend-difference`}
+        className={`relative container-default sm:max-w-xl lg:max-w-4xl flex flex-col justify-center mix-blend-difference`}
       >
         <Parallax speed={-9}>
-          <ScrollFadeIn as={<div className={`space-y-12 xl:pt-[32vh]`} />}>
+          <ScrollFadeIn
+            as={<div className={`space-y-12 xl:pt-[32vh] pr-4 sm:pr-0`} />}
+          >
             <div className={`w-full `}>
               <h1 className={`text-title-2 text-neutral-400`}>
                 We help grow the Future Industry
@@ -33,6 +36,12 @@ export default function Hero() {
                 Be part of the digital revolution and get the most of the value
                 of the internet
               </h2>
+            </div>
+
+            <div
+              className={`absolute -bottom-20 right-8 sm:-bottom-12 xl:-right-[12vw] z-20`}
+            >
+              <ScrollIndicator />
             </div>
           </ScrollFadeIn>
         </Parallax>
