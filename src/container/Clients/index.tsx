@@ -57,7 +57,7 @@ function ClientCard({ title, count, index }: any) {
         progress={counter.value / count}
         {...counterProps}
       >
-        <span className={`block absolute bottom-0 left-0 w-0 h-px bg-black`} />
+        <span className={`block absolute bottom-0 left-0 w-0 h-0.5 bg-black`} />
       </Tween>
     </div>
   );

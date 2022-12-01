@@ -39,7 +39,7 @@ export default function Hero() {
             </div>
 
             <div
-              className={`absolute -bottom-20 right-8 sm:-bottom-12 xl:-right-[12vw] z-20`}
+              className={`absolute bottom-0 right-8 sm:-bottom-12 xl:-right-[12vw] z-20`}
             >
               <ScrollIndicator />
             </div>
