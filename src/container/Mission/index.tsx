@@ -38,7 +38,7 @@ function MissionBgImage() {
       <Parallax
         as={Image}
         speed={-2}
-        className={`flex-1 object-cover`}
+        className={`flex-1 object-cover `}
         src={images.mission}
         alt={`Future`}
         layout={`fill`}

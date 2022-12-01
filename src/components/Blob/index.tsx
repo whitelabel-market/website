@@ -25,8 +25,8 @@ function BlobCamera() {
       fov={45}
       near={0.1}
       far={1e3}
-      position={[-0.5, 0, 2]}
-      lookAt={() => new THREE.Vector3(isTouch ? -0.2 : -0.4, 0, 0)}
+      position={[isTouch ? -0.9 : -0.5, 0, 2]}
+      lookAt={() => new THREE.Vector3(-0.4, 0, 0)}
     />
   );
 }

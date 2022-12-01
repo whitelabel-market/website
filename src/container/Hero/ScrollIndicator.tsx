@@ -4,7 +4,7 @@ export default function ScrollIndicator() {
       className={`transform -rotate-90 origin-bottom-left translate-x-full flex items-center space-x-3`}
     >
       <span
-        className={`block text-[0.55rem] leading-none font-semibold tracking-widest uppercase text-neutral-600 dark:text-neutral-300`}
+        className={`block text-xs leading-none font-semibold tracking-widest uppercase text-neutral-600 dark:text-neutral-300`}
       >
         Scroll
       </span>

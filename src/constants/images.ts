@@ -23,7 +23,7 @@ import stelalabs from '@/assets/images/stelalabs.png';
 import warp from '@/assets/images/warp.png';
 import experienceBg from '@/assets/images/experience-bg.jpg';
 import future from '@/assets/images/future.jpg';
-import mission from '@/assets/images/mission.webp';
+import mission from '@/assets/images/mission.jpg';
 
 export default {
   logo,

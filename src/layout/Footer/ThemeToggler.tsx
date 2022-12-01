@@ -8,7 +8,7 @@ export default function ThemeToggler() {
   const [mounted, setMounted] = useState(false);
   useMount(() => setMounted(true));
 
-  const iconClassName = `block w-3 h-3 mb-0.5`;
+  const iconClassName = `block w-3 h-3`;
 
   if (!mounted) {
     return <></>;

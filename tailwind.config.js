@@ -12,8 +12,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Area', ...defaultTheme.fontFamily.serif],
-        sans: ['Area', ...defaultTheme.fontFamily.sans],
+        sans: ['Manrope', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         scroll: {

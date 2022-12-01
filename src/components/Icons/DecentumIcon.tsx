@@ -6,7 +6,7 @@ export default function DecentumIcon() {
   return (
     <Link href={routes.Home.Home} passHref>
       <a
-        className={`inline-block text-2xl font-bold tracking-tighter link-2 !text-yellow/90 !hover:text-neutral-50`}
+        className={`inline-block text-2xl font-bold tracking-tighter link-2 !text-neutral-600/90 hover:!text-neutral-500`}
       >
         Decentum
       </a>

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useOnce } from '@react-spring/shared';
 import { useMount } from 'react-use';
-import { Controls, PlayState, Tween } from 'react-gsap';
+import { PlayState, Tween } from 'react-gsap';
 
 export default function PageTransition({
   children,
@@ -11,13 +10,12 @@ export default function PageTransition({
   const [playState, setPlayState] = React.useState(PlayState.pause);
 
   const onStart = () => {
-    console.log(`animation Start`);
     setPlayState(PlayState.stop);
   };
   const onEnd = () => {
-    console.log(`animation End`);
     setPlayState(PlayState.restart);
   };
+
   useMount(() => {
     onEnd();
 

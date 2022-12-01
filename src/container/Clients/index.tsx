@@ -36,19 +36,19 @@ function ClientCard({ title, count, index }: any) {
 
   return (
     <div
-      className="relative flex flex-1 items-end justify-between py-2"
+      className="relative flex flex-1 items-end justify-between py-6"
       ref={triggerRef}
     >
-      <div className={`flex items-center lg:items-end space-x-4 `}>
+      <div className={`flex items-end space-x-4 `}>
         <span
-          className={`block tracking-wider text-xs lg:text-sm lg:leading-7`}
+          className={`block tracking-wider !leading-none text-xs lg:text-sm`}
         >
           0{index + 1}.
         </span>
-        <h3 className="text-xl lg:text-3xl">{title}</h3>
+        <h3 className="!leading-none text-xl lg:text-3xl">{title}</h3>
       </div>
       <div className={`flex flex-shrink-0 items-center justify-end w-20`}>
-        <div className="text-2xl lg:text-3xl lining-nums font-bold">
+        <div className="text-xl lg:text-3xl !leading-none lining-nums font-bold">
           {counter.value}
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Tag({
       />
 
       <span
-        className={`block text-[0.6rem] tracking-widest uppercase mt-0.5 font-bold ${
+        className={`block text-xs tracking-widest uppercase font-bold ${
           textColor[color as keyof typeof textColor]
         }`}
       >
