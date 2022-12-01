@@ -10,9 +10,11 @@ export default function ThemeToggler() {
 
   const iconClassName = `block w-3 h-3 mb-0.5`;
 
-  return mounted ? (
-    <></>
-  ) : (
+  if (!mounted) {
+    return <></>;
+  }
+
+  return (
     <button
       onClick={() => setTheme(theme === `dark` ? `light` : `dark`)}
       className="link-2 space-x-1 items-center"

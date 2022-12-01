@@ -1,31 +1,35 @@
 import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
 import ScrollFadeIn from '@/components/ScrollFadeIn';
+import Parallax from '@/components/Parallax';
+import Image from 'next/image';
+import { images } from '@/constants';
 
 export default function Hero() {
   const heroRef = useRef(null);
 
   return (
     <div
-      className={`relative top-0 left-0 w-full h-screen overflow-hidden`}
+      className={`relative flex flex-col justify-end w-full min-h-[100vh] pb-32 pt-64 xl:pb-0 overflow-hidden`}
       ref={heroRef}
     >
-      <div
+      <Parallax
+        speed={-7}
         className={`absolute top-0 left-0 w-full h-full overflow-hidden`}
-        data-scroll
-        data-scroll-speed="-7"
       >
         <Blob />
-      </div>
+      </Parallax>
 
       <div
-        className={`absolute container-default !max-w-4xl flex flex-col justify-center top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference`}
+        className={`container-default sm:max-w-xl lg:max-w-4xl flex flex-col justify-center mix-blend-difference`}
       >
-        <div data-scroll data-scroll-speed="-9">
-          <ScrollFadeIn as={<div className={`space-y-12 lg:pt-[32vh]`} />}>
-            <h1 className={`text-title-2 text-neutral-400`}>
-              We help grow the Future Industry
-            </h1>
+        <Parallax speed={-9}>
+          <ScrollFadeIn as={<div className={`space-y-12 xl:pt-[32vh]`} />}>
+            <div className={`w-full `}>
+              <h1 className={`text-title-2 text-neutral-400`}>
+                We help grow the Future Industry
+              </h1>
+            </div>
             <div className={`w-full max-w-sm`}>
               <h2 className={`text-description`}>
                 Be part of the digital revolution and get the most of the value
@@ -33,7 +37,7 @@ export default function Hero() {
               </h2>
             </div>
           </ScrollFadeIn>
-        </div>
+        </Parallax>
       </div>
     </div>
   );

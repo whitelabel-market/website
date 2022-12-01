@@ -8,21 +8,20 @@ export default function Footer() {
   const footerRoutes = [routes.Home, routes.Contact];
 
   return (
-    <footer className="relative h-screen text-sm text-yellow overflow-hidden">
+    <footer className="relative flex min-h-[100vh] text-sm text-yellow overflow-hidden">
       <Blob />
 
-      <div
-        className={`absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-end`}
-      >
-        <div className="container max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-10 p-8 gap-8 lg:gap-y-32">
+      <div className={`relative z-10 flex flex-col justify-end flex-1`}>
+        <div className="container max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-10 p-8 gap-8 sm:pt-32 lg:gap-y-32">
           <div className={`col-span-2 lg:col-span-10`}>
             <a
               href={routes.Contact.Contact}
-              className="text-7xl sm:text-8xl lg:text-9xl link !leading-0 !after:h-0.5"
+              className="text-7xl sm:text-9xl link !leading-0 !after:h-0.5"
             >
               Let&apos;s Talk.
             </a>
           </div>
+
           <div className={`flex flex-col space-y-1 col-span-2 lg:col-span-3`}>
             <span
               className={`block text-2xl font-bold tracking-tighter leading-tight`}

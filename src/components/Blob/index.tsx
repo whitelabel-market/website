@@ -101,7 +101,7 @@ export default function Blob() {
   return (
     <div
       ref={blobRef}
-      className={`w-full h-screen bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
+      className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
     >
       <BlobCanvas isInView={isInView} />
     </div>
