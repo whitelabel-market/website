@@ -2,8 +2,6 @@ import React, { useRef } from 'react';
 import Blob from '@/components/Blob';
 import ScrollFadeIn from '@/components/ScrollFadeIn';
 import Parallax from '@/components/Parallax';
-import Image from 'next/image';
-import { images } from '@/constants';
 
 export default function Hero() {
   const heroRef = useRef(null);

@@ -3,6 +3,7 @@ import { routes } from '@/constants';
 import Link from 'next/link';
 import Blob from '@/components/Blob';
 import ThemeToggler from '@/layout/Footer/ThemeToggler';
+import DecentumIcon from '@/components/Icons/DecentumIcon';
 
 export default function Footer() {
   const footerRoutes = [routes.Home, routes.Contact];
@@ -23,12 +24,11 @@ export default function Footer() {
           </div>
 
           <div className={`flex flex-col space-y-1 col-span-2 lg:col-span-3`}>
-            <span
-              className={`block text-2xl font-bold tracking-tighter leading-tight`}
-            >
-              Decentum
-            </span>
-            <span className={`block text-xs opacity-40 font-bold`}>
+            <div>
+              <DecentumIcon />
+            </div>
+
+            <span className={`block text-xs opacity-50 font-bold`}>
               Berlin,
               <br />
               Germany

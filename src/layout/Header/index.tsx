@@ -2,6 +2,8 @@ import MobileMenu from './MobileMenu';
 import React, { useState } from 'react';
 import { routes } from '@/constants';
 import MobileMenuButton from './MobileMenuButton';
+import Link from 'next/link';
+import DecentumIcon from '@/components/Icons/DecentumIcon';
 
 export default function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
@@ -23,10 +25,8 @@ export default function Navbar() {
       >
         <nav className="flex flex-1 justify-end container px-8 lg:px-16">
           <div className="flex items-center justify-end space-x-2">
-            <div>
-              <span className={`block text-2xl font-black tracking-tighter`}>
-                Decentum
-              </span>
+            <div className={`pointer-events-auto`}>
+              <DecentumIcon />
             </div>
           </div>
         </nav>
