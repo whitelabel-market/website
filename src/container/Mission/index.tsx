@@ -5,8 +5,10 @@ import Tag from '@/components/Tag';
 import gsap from 'gsap';
 import { useDevice } from '@/hooks/useDevice';
 import ScrollFadeIn from '@/components/ScrollFadeIn';
+import Section from '@/components/Section';
+import Parallax from '@/components/Parallax';
 
-export default function Mission() {
+function MissionBgImage() {
   const { useEffectIfCursor } = useDevice();
   const imageRef = useRef(null);
 
@@ -23,49 +25,38 @@ export default function Mission() {
         },
       },
     );
-
     return () => {
       trigger.kill();
     };
   });
 
   return (
-    <section
-      id="mission"
-      className={`relative bg-black text-yellow flex items-center w-full lg:min-h-[110vh]`}
+    <div
+      ref={imageRef}
+      className={`absolute top-0 left-0 w-full h-full flex -z-10`}
     >
-      <ScrollFadeIn
-        as={
-          <div className="relative container-default !max-w-4xl space-y-12 z-20" />
-        }
-      >
-        <div>
-          <Tag color={`yellow`}>Future vision</Tag>
-        </div>
-
-        <h2 className={`text-title`}>We are on a mission</h2>
-
-        <div className={`w-full max-w-lg`}>
-          <p className={`text-description`}>
-            We believe that the future of the internet and Web3 will be driven
-            by transparent and open communities and it is our mission to speed
-            up this shift for our clients.
-          </p>
-        </div>
-      </ScrollFadeIn>
-
-      <div
-        ref={imageRef}
-        className={`absolute top-0 left-0 w-full h-full flex z-10`}
-      >
-        <Image
-          src={images.mission}
-          className="flex-1 object-cover"
-          data-scroll
-          data-scroll-speed="-2"
-          layout={`fill`}
-        />
-      </div>
-    </section>
+      <Parallax
+        as={Image}
+        speed={-2}
+        className={`flex-1 object-cover`}
+        src={images.mission}
+        alt={`Future`}
+        layout={`fill`}
+      />
+    </div>
+  );
+}
+export default function Mission() {
+  return (
+    <Section
+      id={`mission`}
+      className={`lg:min-h-[110vh]`}
+      color={`yellow`}
+      tag={`Future vision`}
+      title={`We are on a mission`}
+      description={`We believe that the future of the internet and Web3 will be driven by transparent and open communities and it is our mission to speed up this shift for our clients.`}
+    >
+      <MissionBgImage />
+    </Section>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TagProps {
-  color?: 'white' | 'yellow' | 'purple';
+  color?: 'white' | 'yellow' | 'purple' | 'black';
 }
 
 export default function Tag({
@@ -12,12 +12,14 @@ export default function Tag({
     white: `bg-neutral-50`,
     yellow: `bg-yellow`,
     purple: `bg-purple`,
+    black: `bg-black`,
   };
 
   const textColor = {
     white: `text-neutral-50`,
     yellow: `text-yellow`,
     purple: `text-purple`,
+    black: `text-black`,
   };
 
   return (
