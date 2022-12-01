@@ -39,11 +39,13 @@ function ClientCard({ title, count, index }: any) {
       className="relative flex flex-1 items-end justify-between py-2"
       ref={triggerRef}
     >
-      <div className={`flex items-end space-x-4 `}>
-        <span className={`block tracking-wider text-sm leading-7`}>
+      <div className={`flex items-center lg:items-end space-x-4 `}>
+        <span
+          className={`block tracking-wider text-xs lg:text-sm lg:leading-7`}
+        >
           0{index + 1}.
         </span>
-        <h3 className="text-2xl lg:text-3xl ">{title}</h3>
+        <h3 className="text-xl lg:text-3xl">{title}</h3>
       </div>
       <div className={`flex flex-shrink-0 items-center justify-end w-20`}>
         <div className="text-2xl lg:text-3xl lining-nums font-bold">

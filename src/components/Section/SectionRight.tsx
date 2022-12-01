@@ -7,6 +7,7 @@ export interface SectionRightProps {
   tag?: string;
   description?: string;
   color?: 'white' | 'yellow' | 'purple' | 'black';
+  disableTheme?: boolean;
 }
 
 export default function SectionRight({
@@ -15,6 +16,7 @@ export default function SectionRight({
   description,
   color,
   children,
+  disableTheme,
 }: React.PropsWithChildren<SectionRightProps>) {
   return (
     <div className={`container-default grid lg:grid-cols-4 gap-16`}>
@@ -25,7 +27,9 @@ export default function SectionRight({
           <></>
         ) : (
           <div>
-            <Tag color={color}>{tag}</Tag>
+            <Tag color={color} disableTheme={disableTheme}>
+              {tag}
+            </Tag>
           </div>
         )}
 

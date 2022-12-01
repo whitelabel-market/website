@@ -22,7 +22,7 @@ export default function FeatureCard({
       <div className="relative pb-8">
         <div className={`aspect-video w-full`} />
         <video
-          className="block absolute inset-0 object-cover"
+          className="block absolute inset-0 object-cover rounded overflow-hidden"
           muted
           autoPlay
           loop

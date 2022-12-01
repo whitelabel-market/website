@@ -27,20 +27,22 @@ export default function Hero() {
             as={<div className={`space-y-12 xl:pt-[32vh] pr-4 sm:pr-0`} />}
           >
             <div className={`w-full `}>
-              <h1 className={`text-title-2 text-neutral-400`}>
+              <h1
+                className={`text-title-2 text-neutral-600 dark:text-neutral-400`}
+              >
                 We help grow the Future Industry
               </h1>
             </div>
             <div className={`w-full max-w-sm`}>
-              <h2 className={`text-description`}>
+              <h2
+                className={`text-description text-neutral-50 dark:text-neutral-50`}
+              >
                 Be part of the digital revolution and get the most of the value
                 of the internet
               </h2>
             </div>
 
-            <div
-              className={`absolute bottom-0 right-8 sm:-bottom-12 xl:-right-[12vw] z-20`}
-            >
+            <div className={`absolute bottom-0 right-8 xl:-right-[14vw] z-20`}>
               <ScrollIndicator />
             </div>
           </ScrollFadeIn>

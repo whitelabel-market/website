@@ -9,7 +9,7 @@ export default function Footer() {
   const footerRoutes = [routes.Home, routes.Contact];
 
   return (
-    <footer className="relative flex min-h-[100vh] text-sm text-yellow overflow-hidden">
+    <footer className="relative flex min-h-[100vh] text-sm text-yellow-900 dark:text-yellow overflow-hidden">
       <Blob />
 
       <div className={`relative z-10 flex flex-col justify-end flex-1`}>
@@ -17,7 +17,7 @@ export default function Footer() {
           <div className={`col-span-2 lg:col-span-10`}>
             <a
               href={routes.Contact.Contact}
-              className="text-7xl sm:text-9xl link !leading-0 !after:h-0.5"
+              className="text-7xl sm:text-9xl link !leading-none sm:leading-none after:h-0.5 sm:after:h-1"
             >
               Let&apos;s Talk.
             </a>

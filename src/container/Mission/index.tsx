@@ -51,6 +51,7 @@ export default function Mission() {
     <Section
       id={`mission`}
       className={`lg:min-h-[110vh]`}
+      disableTheme={true}
       color={`yellow`}
       tag={`Future vision`}
       title={`We are on a mission`}

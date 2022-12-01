@@ -26,6 +26,7 @@ const Section = React.forwardRef<
       children,
       className,
       variant = `right`,
+      disableTheme,
       parent: ParentComponent,
       ...props
     },
@@ -34,19 +35,26 @@ const Section = React.forwardRef<
     const colorClass = {
       text: {
         white: `text-neutral-50`,
-        yellow: `text-yellow`,
-        purple: `text-purple`,
+        yellow: disableTheme
+          ? `text-yellow`
+          : `text-yellow-900 dark:text-yellow`,
+        purple: disableTheme
+          ? `text-purple`
+          : `text-neutral-900 dark:text-purple`,
         black: `text-black`,
       },
       bg: {
-        black: `bg-black`,
-        gray: `bg-neutral-400`,
+        black: disableTheme ? `bg-black` : `bg-neutral-100 dark:bg-black`,
+        gray: disableTheme
+          ? `bg-neutral-400`
+          : `bg-neutral-200 dark:bg-neutral-400`,
       },
     };
 
     const variants = {
       right: (
         <SectionRight
+          disableTheme={disableTheme}
           title={title}
           tag={tag}
           description={description}

@@ -5,6 +5,7 @@ import { createNoise3D } from 'simplex-noise';
 import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useDevice } from '@/hooks/useDevice';
+import { useTheme } from 'next-themes';
 
 const noise3D = createNoise3D();
 
@@ -58,27 +59,44 @@ function SphereGeometry(props: any) {
 }
 
 function BlobSphere() {
+  const { theme } = useTheme();
+  const color = new THREE.Color(theme === `dark` ? 0x2b2b2b : 0x9e9e9e);
+
   return (
     <mesh>
       <SphereGeometry args={[1, 128, 128]} />
-      <meshPhongMaterial color={2434341} />
+      <meshPhongMaterial color={color} />
     </mesh>
   );
 }
 
 function DirectionalLight(props: any) {
-  return <directionalLight color={16777215} {...props} />;
+  const { theme } = useTheme();
+  const color = new THREE.Color(theme === `dark` ? 16777215 : 0xf8f8f8);
+
+  return <directionalLight color={color} {...props} />;
 }
 
 function BlobCanvas({ isInView }: { isInView: boolean }) {
+  const { theme } = useTheme();
+  const intensity = 2;
+
   return (
     <Canvas>
       {!isInView && <DisableRender />}
 
       <BlobCamera />
       <BlobSphere />
-      <DirectionalLight intensity={2} position={[0, 400, 200]} castShadow />
-      <DirectionalLight intensity={2} position={[0, 200, 100]} castShadow />
+      <DirectionalLight
+        intensity={intensity}
+        position={theme === `dark` ? [0, 400, 200] : [0, 300, 200]}
+        castShadow
+      />
+      <DirectionalLight
+        intensity={intensity}
+        position={theme === `dark` ? [0, 200, 100] : [0, -900, 100]}
+        castShadow
+      />
     </Canvas>
   );
 }
@@ -101,7 +119,7 @@ export default function Blob() {
   return (
     <div
       ref={blobRef}
-      className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-neutral-800 via-neutral-900 to-black overflow-hidden`}
+      className={`absolute top-0 left-0 w-full h-full bg-gradient-to-t from-neutral-300 via-neutral-200 to-neutral-100 dark:from-neutral-800 dark:via-neutral-900 dark:to-black overflow-hidden`}
     >
       <BlobCanvas isInView={isInView} />
     </div>

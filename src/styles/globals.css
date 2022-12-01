@@ -5,7 +5,7 @@
 @layer base {
 
   body {
-    @apply bg-black text-neutral-50
+    @apply bg-neutral-100 text-neutral-900 dark:bg-black dark:text-neutral-50
   }
 
   button{
@@ -19,6 +19,15 @@
   section {
     @apply py-40;
   }
+
+  ::-moz-selection {
+    @apply bg-neutral-900/10 dark:bg-neutral-50/10 text-yellow-900 dark:text-yellow
+  }
+
+  ::selection {
+    @apply bg-neutral-900/10 dark:bg-neutral-50/10 text-yellow-900 dark:text-yellow
+  }
+
 
 }
 @layer utilities {
@@ -44,11 +53,11 @@
 
 
   .link, .link-1 {
-    @apply relative leading-loose inline-flex opacity-90 hover:opacity-100 after:block after:absolute after:bottom-px after:left-0 after:w-0 after:h-px after:bg-yellow hover:after:w-full duration-300 after:duration-300 transition
+    @apply relative leading-loose inline-flex opacity-90 hover:opacity-100 after:block after:absolute after:bottom-px after:left-0 after:w-0 after:h-px after:bg-yellow-900 dark:after:bg-yellow hover:after:w-full duration-300 after:duration-300 transition
   }
 
   .link-2 {
-    @apply relative leading-loose inline-flex text-yellow/90 hover:text-white duration-300 transition
+    @apply relative leading-loose inline-flex text-yellow-900/90 dark:text-yellow/90 hover:text-neutral-900 dark:hover:text-neutral-50 duration-300 transition
   }
 
   .border-default {
